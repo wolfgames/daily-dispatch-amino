@@ -1,0 +1,45 @@
+{
+  "uid": "local-fallback-dispatch",
+  "name": "Daily Dispatch — Chapter 3",
+  "chapters": [
+    {
+      "id": 3,
+      "uid": "dispatch-chapter-3",
+      "name": "Dispatch 3",
+      "county": {
+        "uid": "county-default",
+        "name": "default",
+        "texturePack": {
+          "uid": "tp-county-default",
+          "name": "default",
+          "type": "common",
+          "packFileKey": "atlas-tiles-citylines.json"
+        }
+      },
+      "story": {
+        "uid": "story-dispatch-3",
+        "intro": "Hey. I'm Marty. Looks like my dispatch's got a few gaps today. Let's reconnect the routes so I can make the full shift.",
+        "headline": "Dispatch 3",
+        "chapterStart": "Hmm\u2026 yeah, I can feel it. Parts of my route aren't lining up. Time to get things flowing again.",
+        "completion": "Hey! That's a full dispatch right there. Every route's open \u2014 let's go!",
+        "imageUrl": "",
+        "articleUrl": ""
+      },
+      "texturePack": {
+        "uid": "tp-default",
+        "name": "default",
+        "type": "common",
+        "packFileKey": "atlas-tiles-citylines.json"
+      },
+      "levels": [
+        { "uid": "d3-level-1", "levelNumber": 1, "config": {}, "seed": 62001, "clues": [{ "uid": "d3-clue-1", "text": "Nice. That's one stretch back in place." }] },
+        { "uid": "d3-level-2", "levelNumber": 2, "config": {}, "seed": 62002, "clues": [{ "uid": "d3-clue-2", "text": "Good. I can move forward without stopping." }] },
+        { "uid": "d3-level-3", "levelNumber": 3, "config": {}, "seed": 62003, "clues": [{ "uid": "d3-clue-3", "text": "Hmm-hmm\u2026 that feels smoother already." }] },
+        { "uid": "d3-level-4", "levelNumber": 4, "config": {}, "seed": 62004, "clues": [{ "uid": "d3-clue-4", "text": "Alright. No more awkward turns here." }] },
+        { "uid": "d3-level-5", "levelNumber": 5, "config": {}, "seed": 62005, "clues": [{ "uid": "d3-clue-5", "text": "Almost there. Just a couple more routes to fix." }] },
+        { "uid": "d3-level-6", "levelNumber": 6, "config": {}, "seed": 62006, "clues": [{ "uid": "d3-clue-6", "text": "Yes! That's the long run opened back up." }] },
+        { "uid": "d3-level-7", "levelNumber": 7, "config": {}, "seed": 62007, "clues": [{ "uid": "d3-clue-7", "text": "Perfect. Everything's connecting the way it should." }] }
+      ]
+    }
+  ]
+}

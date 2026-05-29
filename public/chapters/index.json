@@ -1,0 +1,54 @@
+{
+  "games": [
+    {
+      "uid": "dispatch-chapter-1",
+      "url": "dispatch-1.json",
+      "publishDate": "2026-02-10T00:00:00.000Z"
+    },
+    {
+      "uid": "dispatch-chapter-2",
+      "url": "dispatch-2.json",
+      "publishDate": "2026-02-10T00:00:00.000Z"
+    },
+    {
+      "uid": "dispatch-chapter-3",
+      "url": "dispatch-3.json",
+      "publishDate": "2026-02-10T00:00:00.000Z"
+    },
+    {
+      "uid": "dispatch-chapter-4",
+      "url": "dispatch-4.json",
+      "publishDate": "2026-02-10T00:00:00.000Z"
+    },
+    {
+      "uid": "dispatch-chapter-5",
+      "url": "dispatch-5.json",
+      "publishDate": "2026-02-10T00:00:00.000Z"
+    },
+    {
+      "uid": "dispatch-chapter-6",
+      "url": "dispatch-6.json",
+      "publishDate": "2026-02-10T00:00:00.000Z"
+    },
+    {
+      "uid": "dispatch-chapter-7",
+      "url": "dispatch-7.json",
+      "publishDate": "2026-02-10T00:00:00.000Z"
+    },
+    {
+      "uid": "dispatch-chapter-8",
+      "url": "dispatch-8.json",
+      "publishDate": "2026-02-10T00:00:00.000Z"
+    },
+    {
+      "uid": "dispatch-chapter-9",
+      "url": "dispatch-9.json",
+      "publishDate": "2026-02-10T00:00:00.000Z"
+    },
+    {
+      "uid": "dispatch-chapter-10",
+      "url": "dispatch-10.json",
+      "publishDate": "2026-02-10T00:00:00.000Z"
+    }
+  ]
+}

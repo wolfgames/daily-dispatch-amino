@@ -24,6 +24,7 @@
 import type { AssetCoordinatorFacade } from '~/core/systems/assets';
 import type { ScaffoldTuning } from '~/core/systems/tuning/types';
 import type { GameTuningBase } from '~/core/systems/tuning/types';
+import type { GameTracking } from '~/game/setup/tracking';
 
 export type GameMode = 'dom' | 'pixi';
 
@@ -36,7 +37,7 @@ export interface GameControllerDeps {
   tuning: { scaffold: ScaffoldTuning; game: GameTuningBase };
   audio: unknown;
   gameData: unknown;
-  analytics: unknown;
+  analytics: GameTracking;
 }
 
 export interface GameController {
@@ -69,7 +70,7 @@ export interface StartScreenDeps {
   loadAudio: (onProgress?: (p: number) => void) => Promise<void>;
   loadBundle?: (name: string, onProgress?: (p: number) => void) => Promise<void>;
   tuning: { scaffold: ScaffoldTuning; game: GameTuningBase };
-  analytics: { trackGameStart: (params: { start_source: string; is_returning_player: boolean }) => void };
+  analytics: Pick<GameTracking, 'trackGameStart'>;
 }
 
 export interface StartScreenController {

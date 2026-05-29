@@ -1,0 +1,80 @@
+{
+  "src": [
+    "sfx-citylines.webm",
+    "sfx-citylines.mp3"
+  ],
+  "sprite": {
+    "button_click": [
+      0,
+      508
+    ],
+    "start_game": [
+      608,
+      2212
+    ],
+    "play_again": [
+      2920,
+      2000
+    ],
+    "main_menu": [
+      5020,
+      2000
+    ],
+    "tile_rotate_1": [
+      7120,
+      100
+    ],
+    "tile_rotate_2": [
+      7320,
+      144
+    ],
+    "tile_rotate_3": [
+      7564,
+      114
+    ],
+    "tile_rotate_4": [
+      7778,
+      100
+    ],
+    "tile_rotate_5": [
+      7978,
+      100
+    ],
+    "tile_rotate_6": [
+      8178,
+      2000
+    ],
+    "tile_rotate_7": [
+      10278,
+      100
+    ],
+    "tile_rotate_8": [
+      10478,
+      1000
+    ],
+    "level_complete": [
+      11578,
+      480
+    ],
+    "landmark_connect": [
+      12158,
+      739
+    ],
+    "chapter_complete": [
+      12997,
+      2000
+    ],
+    "news_reveal": [
+      15097,
+      767
+    ],
+    "dog_bark": [
+      15964,
+      725
+    ],
+    "dog_pant": [
+      16789,
+      1000
+    ]
+  }
+}

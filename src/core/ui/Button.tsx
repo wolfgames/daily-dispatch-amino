@@ -24,22 +24,16 @@ const sizeClasses: Record<ButtonSize, string> = {
 
 export function Button(props: ButtonProps) {
   const [local, rest] = splitProps(props, ['variant', 'size', 'loading', 'children', 'class', 'disabled', 'onClick']);
-  const { coordinator } = useAssets();
+  useAssets();
 
   const variant = () => local.variant ?? 'primary';
   const size = () => local.size ?? 'md';
-
-  const handleClick = (e: MouseEvent) => {
-    if (local.onClick) {
-      local.onClick(e);
-    }
-  };
 
   return (
     <button
       {...rest}
       disabled={local.disabled || local.loading}
-      onClick={handleClick}
+      onClick={local.onClick}
       class={`
         rounded-lg font-medium transition-all duration-200
         disabled:opacity-50 disabled:cursor-not-allowed

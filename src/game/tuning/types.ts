@@ -17,9 +17,37 @@ export interface GameScreensConfig {
   loadingBackgroundColor: string;
 }
 
+export interface DailyDispatchGridConfig {
+  width: number;
+  height: number;
+  swipeMinDistance: number;
+}
+
+export interface DailyDispatchTimingConfig {
+  startDelayMs: number;
+  resumeLoadingPauseMs: number;
+  startLoadingPauseMs: number;
+  clueDisplayMs: number;
+  clueFadeInMs: number;
+  clueFadeOutMs: number;
+  slideDurationPerCell: number;
+  exitDuration: number;
+  dockCloseDuration: number;
+  truckDriveAwayDuration: number;
+}
+
+export interface DailyDispatchAdapterConfig {
+  progressSaveOnMove: boolean;
+  resumeLegacyProgress: boolean;
+  analyticsDebugLogging: boolean;
+}
+
 export interface GameTuning extends GameTuningBase {
   devMode: DevModeConfig;
   screens: GameScreensConfig;
+  grid: DailyDispatchGridConfig;
+  timing: DailyDispatchTimingConfig;
+  adapters: DailyDispatchAdapterConfig;
 }
 
 // ============================================
@@ -32,8 +60,30 @@ export const GAME_DEFAULTS: GameTuning = {
     skipStartScreen: false,
   },
   screens: {
-    startBackgroundColor: '#BCE083',
-    loadingBackgroundColor: '#BCE083',
+    startBackgroundColor: '#4A3728',
+    loadingBackgroundColor: '#4A3728',
+  },
+  grid: {
+    width: 6,
+    height: 6,
+    swipeMinDistance: 4,
+  },
+  timing: {
+    startDelayMs: 200,
+    resumeLoadingPauseMs: 300,
+    startLoadingPauseMs: 500,
+    clueDisplayMs: 3000,
+    clueFadeInMs: 400,
+    clueFadeOutMs: 300,
+    slideDurationPerCell: 0.08,
+    exitDuration: 0.4,
+    dockCloseDuration: 0.3,
+    truckDriveAwayDuration: 0.5,
+  },
+  adapters: {
+    progressSaveOnMove: true,
+    resumeLegacyProgress: true,
+    analyticsDebugLogging: true,
   },
 };
 

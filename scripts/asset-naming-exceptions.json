@@ -1,0 +1,147 @@
+[
+  {
+    "path": "block-obstacle-egg-128.png",
+    "reason": "scaffold-carried",
+    "note": "Restored scaffold asset required by template runtime; do not rename during parity migration."
+  },
+  {
+    "path": "block-obstacle-egg-cracked-128.png",
+    "reason": "scaffold-carried",
+    "note": "Restored scaffold asset required by template runtime; do not rename during parity migration."
+  },
+  {
+    "path": "block-obstacle-egg-cracked.png",
+    "reason": "scaffold-carried",
+    "note": "Restored scaffold asset required by template runtime; do not rename during parity migration."
+  },
+  {
+    "path": "block-obstacle-egg-nest-128.png",
+    "reason": "scaffold-carried",
+    "note": "Restored scaffold asset required by template runtime; do not rename during parity migration."
+  },
+  {
+    "path": "block-obstacle-egg.png",
+    "reason": "scaffold-carried",
+    "note": "Restored scaffold asset required by template runtime; do not rename during parity migration."
+  },
+  {
+    "path": "block-obstacle-ice-128.png",
+    "reason": "scaffold-carried",
+    "note": "Restored scaffold asset required by template runtime; do not rename during parity migration."
+  },
+  {
+    "path": "block-obstacle-ice.png",
+    "reason": "scaffold-carried",
+    "note": "Restored scaffold asset required by template runtime; do not rename during parity migration."
+  },
+  {
+    "path": "block-obstacle-jelly-128.png",
+    "reason": "scaffold-carried",
+    "note": "Restored scaffold asset required by template runtime; do not rename during parity migration."
+  },
+  {
+    "path": "block-obstacle-jelly.png",
+    "reason": "scaffold-carried",
+    "note": "Restored scaffold asset required by template runtime; do not rename during parity migration."
+  },
+  {
+    "path": "block-obstacle-safe-128.png",
+    "reason": "scaffold-carried",
+    "note": "Restored scaffold asset required by template runtime; do not rename during parity migration."
+  },
+  {
+    "path": "block-obstacle-safe.png",
+    "reason": "scaffold-carried",
+    "note": "Restored scaffold asset required by template runtime; do not rename during parity migration."
+  },
+  {
+    "path": "block-obstacle-stone-128.png",
+    "reason": "scaffold-carried",
+    "note": "Restored scaffold asset required by template runtime; do not rename during parity migration."
+  },
+  {
+    "path": "block-obstacle-stone.png",
+    "reason": "scaffold-carried",
+    "note": "Restored scaffold asset required by template runtime; do not rename during parity migration."
+  },
+  {
+    "path": "block-rock-stone-128.png",
+    "reason": "scaffold-carried",
+    "note": "Restored scaffold asset required by template runtime; do not rename during parity migration."
+  },
+  {
+    "path": "block-rock-stone.png",
+    "reason": "scaffold-carried",
+    "note": "Restored scaffold asset required by template runtime; do not rename during parity migration."
+  },
+  {
+    "path": "bomb-icon-preview.html",
+    "reason": "scaffold-carried",
+    "note": "Scaffold preview/support file restored for runtime developability; exact exception prevents broad HTML allowance."
+  },
+  {
+    "path": "bomb-outline-alt1.svg",
+    "reason": "scaffold-carried",
+    "note": "Scaffold SVG restored after runtime smoke proved it is requested; do not rename without manifest/runtime update."
+  },
+  {
+    "path": "bomb-outline-alt2.svg",
+    "reason": "scaffold-carried",
+    "note": "Scaffold SVG restored after runtime smoke proved related scaffold assets are requested; do not rename without manifest/runtime update."
+  },
+  {
+    "path": "bomb-outline-alt3.svg",
+    "reason": "scaffold-carried",
+    "note": "Scaffold SVG restored after runtime smoke proved related scaffold assets are requested; do not rename without manifest/runtime update."
+  },
+  {
+    "path": "bomb-outline.svg",
+    "reason": "scaffold-carried",
+    "note": "Scaffold SVG restored after runtime smoke proved it is requested; do not rename without manifest/runtime update."
+  },
+  {
+    "path": "eigen-btn-continue.png",
+    "reason": "scaffold-carried",
+    "note": "Template asset carried from scaffold baseline; allow exact legacy name only."
+  },
+  {
+    "path": "eigen-btn-tap-to-play.png",
+    "reason": "scaffold-carried",
+    "note": "Template asset carried from scaffold baseline; allow exact legacy name only."
+  },
+  {
+    "path": "eigen-gems.json",
+    "reason": "scaffold-carried",
+    "note": "Template atlas carried from scaffold baseline; allow exact legacy name only."
+  },
+  {
+    "path": "eigen-gems.png",
+    "reason": "scaffold-carried",
+    "note": "Template atlas image carried from scaffold baseline; allow exact legacy name only."
+  },
+  {
+    "path": "eigen-pop-title.png",
+    "reason": "scaffold-carried",
+    "note": "Template asset carried from scaffold baseline; allow exact legacy name only."
+  },
+  {
+    "path": "host-portrait.png",
+    "reason": "scaffold-carried",
+    "note": "Template host portrait carried from scaffold baseline; allow exact legacy name only."
+  },
+  {
+    "path": "powerup-spawn-preview.html",
+    "reason": "scaffold-carried",
+    "note": "Scaffold preview/support file restored for runtime developability; exact exception prevents broad HTML allowance."
+  },
+  {
+    "path": "rocket-outline.svg",
+    "reason": "scaffold-carried",
+    "note": "Template scaffold SVG carried for support/runtime parity; allow exact legacy name only."
+  },
+  {
+    "path": "rubiks-outline.svg",
+    "reason": "scaffold-carried",
+    "note": "Template scaffold SVG carried for support/runtime parity; allow exact legacy name only."
+  }
+]

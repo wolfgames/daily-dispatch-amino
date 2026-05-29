@@ -1,0 +1,45 @@
+{
+  "uid": "local-fallback-dispatch",
+  "name": "Daily Dispatch — Chapter 9",
+  "chapters": [
+    {
+      "id": 9,
+      "uid": "dispatch-chapter-9",
+      "name": "Dispatch 9",
+      "county": {
+        "uid": "county-default",
+        "name": "default",
+        "texturePack": {
+          "uid": "tp-county-default",
+          "name": "default",
+          "type": "common",
+          "packFileKey": "atlas-tiles-citylines.json"
+        }
+      },
+      "story": {
+        "uid": "story-dispatch-9",
+        "intro": "Hey! I was mid-dispatch and hit a dead end. That's not supposed to happen. Let's get this route flowing again!",
+        "headline": "Dispatch 9",
+        "chapterStart": "Hmm… something broke in the middle of my shift. I can smell the rest of the route, but I can't reach it yet.",
+        "completion": "Hey! No more dead ends. The whole neighborhood's connected again!",
+        "imageUrl": "",
+        "articleUrl": ""
+      },
+      "texturePack": {
+        "uid": "tp-default",
+        "name": "default",
+        "type": "common",
+        "packFileKey": "atlas-tiles-citylines.json"
+      },
+      "levels": [
+        { "uid": "d9-level-1", "levelNumber": 1, "config": {}, "seed": 12201, "clues": [{ "uid": "d9-clue-1", "text": "Good. That opens up the first stretch." }] },
+        { "uid": "d9-level-2", "levelNumber": 2, "config": {}, "seed": 12202, "clues": [{ "uid": "d9-clue-2", "text": "There we go. I can cut through here now." }] },
+        { "uid": "d9-level-3", "levelNumber": 3, "config": {}, "seed": 12203, "clues": [{ "uid": "d9-clue-3", "text": "Hmm… this part always has the best breezes. Glad it's open." }] },
+        { "uid": "d9-level-4", "levelNumber": 4, "config": {}, "seed": 12204, "clues": [{ "uid": "d9-clue-4", "text": "Nice. No more detours around that bend." }] },
+        { "uid": "d9-level-5", "levelNumber": 5, "config": {}, "seed": 12205, "clues": [{ "uid": "d9-clue-5", "text": "The shift's coming together. Almost there." }] },
+        { "uid": "d9-level-6", "levelNumber": 6, "config": {}, "seed": 12206, "clues": [{ "uid": "d9-clue-6", "text": "That's a big one. The far side is reachable again." }] },
+        { "uid": "d9-level-7", "levelNumber": 7, "config": {}, "seed": 12207, "clues": [{ "uid": "d9-clue-7", "text": "Perfect. Every route connects. Full shift!" }] }
+      ]
+    }
+  ]
+}

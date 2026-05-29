@@ -6,6 +6,7 @@ import { useManifest } from '@wolfgames/components/solid';
 import { useTuning, type ScaffoldTuning } from '~/core';
 import { Logo } from '~/core/ui/Logo';
 import type { GameTuning } from '~/game/tuning';
+import { hasResumeProgress } from '~/game/mygame/services/legacy-progress-adapter';
 
 export function LoadingScreen() {
   const { goto } = useScreen();
@@ -24,6 +25,7 @@ export function LoadingScreen() {
   const audioBundles = bundlesByPrefix('audio-');
 
   const shouldSkipStartScreen = (): boolean => {
+    if (hasResumeProgress()) return true;
     if (tuning.game.devMode?.skipStartScreen) return true;
     const params = new URLSearchParams(window.location.search);
     return params.get('screen') === 'game';

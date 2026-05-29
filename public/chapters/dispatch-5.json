@@ -1,0 +1,45 @@
+{
+  "uid": "local-fallback-dispatch",
+  "name": "Daily Dispatch — Chapter 5",
+  "chapters": [
+    {
+      "id": 5,
+      "uid": "dispatch-chapter-5",
+      "name": "Dispatch 5",
+      "county": {
+        "uid": "county-default",
+        "name": "default",
+        "texturePack": {
+          "uid": "tp-county-default",
+          "name": "default",
+          "type": "common",
+          "packFileKey": "atlas-tiles-citylines.json"
+        }
+      },
+      "story": {
+        "uid": "story-dispatch-5",
+        "intro": "Hey. I'm ready for my dispatch, but the route's not fully open. Let's straighten it out so I can make the full shift.",
+        "headline": "Dispatch 5",
+        "chapterStart": "Hmm\u2026 yeah, this won't do. Parts of my route are cut off. We're fixing this.",
+        "completion": "Yes! That's a clean dispatch. Every route's open \u2014 let's roll!",
+        "imageUrl": "",
+        "articleUrl": ""
+      },
+      "texturePack": {
+        "uid": "tp-default",
+        "name": "default",
+        "type": "common",
+        "packFileKey": "atlas-tiles-citylines.json"
+      },
+      "levels": [
+        { "uid": "d5-level-1", "levelNumber": 1, "config": {}, "seed": 82001, "clues": [{ "uid": "d5-clue-1", "text": "Good. That's one route cleared." }] },
+        { "uid": "d5-level-2", "levelNumber": 2, "config": {}, "seed": 82002, "clues": [{ "uid": "d5-clue-2", "text": "Nice. I can move through here without stopping." }] },
+        { "uid": "d5-level-3", "levelNumber": 3, "config": {}, "seed": 82003, "clues": [{ "uid": "d5-clue-3", "text": "Hmm-hmm\u2026 this stretch always keeps things flowing." }] },
+        { "uid": "d5-level-4", "levelNumber": 4, "config": {}, "seed": 82004, "clues": [{ "uid": "d5-clue-4", "text": "Alright. No more backtracking." }] },
+        { "uid": "d5-level-5", "levelNumber": 5, "config": {}, "seed": 82005, "clues": [{ "uid": "d5-clue-5", "text": "Almost there. Just a little more to reconnect." }] },
+        { "uid": "d5-level-6", "levelNumber": 6, "config": {}, "seed": 82006, "clues": [{ "uid": "d5-clue-6", "text": "That's it. The shift's nearly whole again." }] },
+        { "uid": "d5-level-7", "levelNumber": 7, "config": {}, "seed": 82007, "clues": [{ "uid": "d5-clue-7", "text": "Perfect. Everything lines up." }] }
+      ]
+    }
+  ]
+}

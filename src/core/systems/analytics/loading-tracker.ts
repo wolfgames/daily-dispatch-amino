@@ -17,9 +17,9 @@ export function createLoadingTracker(
   service: AnalyticsService,
   loadingStateSignal: Signal<LoadingState>,
 ): () => void {
-  const trackLoadingStart = service.createTracker('loading_start', loadingStartSchema, ['base'], {});
-  const trackLoadingComplete = service.createTracker('loading_complete', loadingCompleteSchema, ['base'], {});
-  const trackLoadingAbandon = service.createTracker('loading_abandon', loadingAbandonSchema, ['base'], {});
+  const trackLoadingStart = service.createTracker('loading_start', loadingStartSchema, ['base'], { base: {} });
+  const trackLoadingComplete = service.createTracker('loading_complete', loadingCompleteSchema, ['base'], { base: {} });
+  const trackLoadingAbandon = service.createTracker('loading_abandon', loadingAbandonSchema, ['base'], { base: {} });
 
   const tracked = new Map<string, number>(); // bundle name → start timestamp
   let prevLoaded = new Set<string>();

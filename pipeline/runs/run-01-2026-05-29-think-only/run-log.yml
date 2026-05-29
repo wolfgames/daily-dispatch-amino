@@ -1,0 +1,33 @@
+task: T05
+skill: daily-dispatch-think-only-plan
+mode: think-only
+status: completed
+created_at: 2026-05-29T00:05:28.1392754-03:00
+inputs:
+  - AGENTS.md
+  - vision.md
+  - docs/INDEX.md
+  - docs/cortex-inventory.md
+  - docs/guides/new-game.md
+  - docs/guides/state-architecture.md
+  - docs/guides/shared-components.md
+  - docs/recipes/manifest-contract.md
+  - docs/standards/best-practices.md
+  - docs/standards/guardrails.md
+  - pipeline/project.md
+  - pipeline/game-prompt.md
+  - ../CONTEXT.md
+  - ../docs/PRD.md
+  - ../docs/source-inventory.md
+  - ../docs/amino-capability-map.md
+  - ../docs/source-derived-parity-spec.md
+  - ../docs/adr/0001-amino-nucleo-path.md
+  - ../docs/adr/0002-parent-workspace-owns-orchestration.md
+  - ../docs/adr/0003-verbatim-source-artifacts.md
+  - ../docs/adr/0004-ecs-first-amino-counterparts.md
+outputs:
+  - pipeline/runs/run-01-2026-05-29-think-only/think-only-plan.md
+  - pipeline/runs/run-01-2026-05-29-think-only/run-log.yml
+writes_started: false
+implementation_files_changed: false
+t06_unblocked: true

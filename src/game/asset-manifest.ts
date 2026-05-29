@@ -5,8 +5,9 @@
  * so it can be imported by CLI scripts (scripts/check-manifest.ts) running
  * under plain Bun without the Vite/app dependency graph.
  *
- * cdnBase and localBase are static placeholders here. config.ts resolves the
- * real CDN URL at runtime and patches cdnBase before handing to the asset system.
+ * cdnBase and localBase intentionally resolve to local public/ assets for the
+ * parity migration. Switch to a remote CDN base only after source assets are
+ * uploaded to that storage path.
  *
  * Types are imported directly from @wolfgames/components/core — this is the
  * single source of truth for the manifest schema.
@@ -34,31 +35,92 @@
 
 import type { Manifest } from '@wolfgames/components/core';
 
-export const LOCAL_ASSET_PATH = '/assets';
+export const LOCAL_ASSET_PATH = '.';
+
+const CHAPTER_ASSETS: Manifest['bundles'][number]['assets'] = [
+  { alias: 'chapter-index', src: 'chapters/index.json', type: 'json' },
+  { alias: 'chapter-dispatch-1', src: 'chapters/dispatch-1.json', type: 'json' },
+  { alias: 'chapter-dispatch-2', src: 'chapters/dispatch-2.json', type: 'json' },
+  { alias: 'chapter-dispatch-3', src: 'chapters/dispatch-3.json', type: 'json' },
+  { alias: 'chapter-dispatch-4', src: 'chapters/dispatch-4.json', type: 'json' },
+  { alias: 'chapter-dispatch-5', src: 'chapters/dispatch-5.json', type: 'json' },
+  { alias: 'chapter-dispatch-6', src: 'chapters/dispatch-6.json', type: 'json' },
+  { alias: 'chapter-dispatch-7', src: 'chapters/dispatch-7.json', type: 'json' },
+  { alias: 'chapter-dispatch-8', src: 'chapters/dispatch-8.json', type: 'json' },
+  { alias: 'chapter-dispatch-9', src: 'chapters/dispatch-9.json', type: 'json' },
+  { alias: 'chapter-dispatch-10', src: 'chapters/dispatch-10.json', type: 'json' },
+];
 
 export const manifest: Manifest = {
   cdnBase: LOCAL_ASSET_PATH,
   localBase: LOCAL_ASSET_PATH,
   bundles: [
-    // DOM — branding logo shown on loading screen (pre-GPU)
+    // No theme-* bundle: the copied branding atlas is a Pixi spritesheet and
+    // must not be routed through the DOM/theme loader during initial load.
     {
-      name: 'theme-branding',
-      assets: [{ alias: 'atlas-branding-wolf', src: 'atlas-branding-wolf.json' }],
+      name: 'scene-daily-dispatch',
+      kind: 'scene',
+      assets: [
+        { alias: 'scene-daily-dispatch', src: 'assets/atlas-tiles-daily-dispatch.json', type: 'spritesheet' },
+      ],
+    },
+    {
+      name: 'fx-daily-dispatch-flash',
+      kind: 'fx',
+      assets: [
+        { alias: 'fx-daily-dispatch-flash', src: 'assets/vfx-flash_fx_shape_04.json', type: 'spritesheet' },
+      ],
+    },
+    {
+      name: 'fx-daily-dispatch-glow',
+      kind: 'fx',
+      assets: [
+        { alias: 'fx-daily-dispatch-glow', src: 'assets/vfx-mg_glow_09.json', type: 'spritesheet' },
+      ],
+    },
+    {
+      name: 'fx-daily-dispatch-noglow',
+      kind: 'fx',
+      assets: [
+        { alias: 'fx-daily-dispatch-noglow', src: 'assets/vfx-mg_noglow_01.json', type: 'spritesheet' },
+      ],
+    },
+    {
+      name: 'fx-daily-dispatch-blast',
+      kind: 'fx',
+      assets: [
+        { alias: 'fx-daily-dispatch-blast', src: 'assets/vfx-blast.json', type: 'spritesheet' },
+      ],
+    },
+    {
+      name: 'fx-daily-dispatch-rotate',
+      kind: 'fx',
+      assets: [
+        { alias: 'fx-daily-dispatch-rotate', src: 'assets/vfx-rotate.json', type: 'spritesheet' },
+      ],
+    },
+    {
+      name: 'audio-sfx-daily-dispatch',
+      kind: 'audio',
+      assets: [
+        // Source JSON is preserved verbatim with "src"; this runtime adapter
+        // supplies loader-required "urls" without mutating source bytes.
+        { alias: 'audio-sfx-daily-dispatch', src: 'assets/sfx-daily-dispatch-runtime.json', type: 'audioSprite' },
+      ],
+    },
+    {
+      name: 'audio-music-warehouse-puzzle',
+      kind: 'audio',
+      assets: [
+        { alias: 'audio-music-warehouse-puzzle', src: 'assets/music-warehouse-puzzle-runtime.json', type: 'audioSprite' },
+      ],
     },
 
-    // When adding bundles for your game, use the appropriate prefix:
-    //
-    //   scene-*  → GPU spritesheets, backgrounds, tiles
-    //   core-*   → GPU in-game UI atlases
-    //   fx-*     → GPU particles, effects, VFX
-    //   audio-*  → Howler sound effects and music
-    //   data-*   → JSON config files
-    //   boot-*   → DOM pre-engine splash assets
-    //
-    // Examples:
-    //   { name: 'scene-tiles-mygame', assets: [{ alias: 'scene-tiles-mygame', src: 'atlas-tiles-mygame.json' }] },
-    //   { name: 'fx-blast', assets: [{ alias: 'fx-blast', src: 'vfx-blast.json' }] },
-    //   { name: 'audio-sfx-mygame', assets: [{ alias: 'audio-sfx-mygame', src: 'sfx-mygame.json' }] },
-    //   { name: 'audio-music-mygame', assets: [{ alias: 'audio-music-mygame', src: 'music-mygame.json' }] },
+    // Loader-safe Daily Dispatch source data copied verbatim from the legacy repo.
+    {
+      name: 'data-chapters',
+      kind: 'data',
+      assets: CHAPTER_ASSETS,
+    },
   ],
 };

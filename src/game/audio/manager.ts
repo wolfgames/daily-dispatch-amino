@@ -12,7 +12,16 @@
 
 import type { AudioLoader } from '~/core/systems/assets/loaders/audio';
 import { BaseAudioManager } from '~/core/systems/audio';
-import { SOUND_BUTTON_CLICK } from './sounds';
+import {
+  MUSIC_WAREHOUSE_PUZZLE,
+  SOUND_BLOCK_EXIT,
+  SOUND_BLOCK_SLIDE,
+  SOUND_BUTTON_CLICK,
+  SOUND_CHAPTER_COMPLETE,
+  SOUND_LEVEL_COMPLETE,
+  SOUND_TRUCK_DOOR_CLOSE,
+  SOUND_TRUCK_DRIVE_AWAY,
+} from './sounds';
 
 export class GameAudioManager extends BaseAudioManager {
   constructor(audioLoader: AudioLoader) {
@@ -21,5 +30,33 @@ export class GameAudioManager extends BaseAudioManager {
 
   playButtonClick(): void {
     this.playSound(SOUND_BUTTON_CLICK);
+  }
+
+  playBlockSlide(): void {
+    this.playSound(SOUND_BLOCK_SLIDE);
+  }
+
+  playBlockExit(): void {
+    this.playSound(SOUND_BLOCK_EXIT);
+  }
+
+  playTruckDoorClose(): void {
+    this.playSound(SOUND_TRUCK_DOOR_CLOSE);
+  }
+
+  playTruckDriveAway(): void {
+    this.playSound(SOUND_TRUCK_DRIVE_AWAY);
+  }
+
+  playLevelComplete(): void {
+    this.playSound(SOUND_LEVEL_COMPLETE);
+  }
+
+  playChapterComplete(): void {
+    this.playSound(SOUND_CHAPTER_COMPLETE);
+  }
+
+  startGameMusic(): void {
+    this.startMusic(MUSIC_WAREHOUSE_PUZZLE);
   }
 }

@@ -1,0 +1,45 @@
+{
+  "uid": "local-fallback-dispatch",
+  "name": "Daily Dispatch — Chapter 7",
+  "chapters": [
+    {
+      "id": 7,
+      "uid": "dispatch-chapter-7",
+      "name": "Dispatch 7",
+      "county": {
+        "uid": "county-default",
+        "name": "default",
+        "texturePack": {
+          "uid": "tp-county-default",
+          "name": "default",
+          "type": "common",
+          "packFileKey": "atlas-tiles-citylines.json"
+        }
+      },
+      "story": {
+        "uid": "story-dispatch-7",
+        "intro": "Hey! I had this whole route planned in my head… but something's blocking my deliveries. Let's open it up!",
+        "headline": "Dispatch 7",
+        "chapterStart": "Hmm… I know this stretch by heart. It shouldn't feel this tangled.",
+        "completion": "That's it! Wide open roads and happy paws. Best dispatch ever!",
+        "imageUrl": "",
+        "articleUrl": ""
+      },
+      "texturePack": {
+        "uid": "tp-default",
+        "name": "default",
+        "type": "common",
+        "packFileKey": "atlas-tiles-citylines.json"
+      },
+      "levels": [
+        { "uid": "d7-level-1", "levelNumber": 1, "config": {}, "seed": 10201, "clues": [{ "uid": "d7-clue-1", "text": "Good! That clears my first dash." }] },
+        { "uid": "d7-level-2", "levelNumber": 2, "config": {}, "seed": 10202, "clues": [{ "uid": "d7-clue-2", "text": "Nice. I can trot through here again." }] },
+        { "uid": "d7-level-3", "levelNumber": 3, "config": {}, "seed": 10203, "clues": [{ "uid": "d7-clue-3", "text": "Ooooh. This part always has good smells." }] },
+        { "uid": "d7-level-4", "levelNumber": 4, "config": {}, "seed": 10204, "clues": [{ "uid": "d7-clue-4", "text": "That's a smooth turn. I like smooth turns." }] },
+        { "uid": "d7-level-5", "levelNumber": 5, "config": {}, "seed": 10205, "clues": [{ "uid": "d7-clue-5", "text": "We're lining it up. I can almost see the whole route." }] },
+        { "uid": "d7-level-6", "levelNumber": 6, "config": {}, "seed": 10206, "clues": [{ "uid": "d7-clue-6", "text": "One more fix and I can really move." }] },
+        { "uid": "d7-level-7", "levelNumber": 7, "config": {}, "seed": 10207, "clues": [{ "uid": "d7-clue-7", "text": "Boom! Everything connects!" }] }
+      ]
+    }
+  ]
+}

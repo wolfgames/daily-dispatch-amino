@@ -4,10 +4,10 @@ import { mkdirSync, writeFileSync, rmSync, readFileSync } from "node:fs";
 import { mkdtempSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { applyScaffoldSyncMeta } from "../../../scripts/scaffold-sync";
+import { applyAminoSyncMeta } from "../../../scripts/amino-sync.ts";
 
 const ROOT = path.resolve(import.meta.dirname, "../../..");
-const SYNC_SCRIPT = path.join(ROOT, "scripts/scaffold-sync.ts");
+const SYNC_SCRIPT = path.join(ROOT, "scripts/amino-sync.ts");
 
 let scaffoldDir: string;
 let gameDir: string;
@@ -20,50 +20,50 @@ function readPkg(dir: string): any {
   return JSON.parse(readFileSync(path.join(dir, "package.json"), "utf-8"));
 }
 
-describe("applyScaffoldSyncMeta (pure)", () => {
-  it("merges scaffold version from scaffold package", () => {
-    const gamePkg = JSON.stringify({ name: "my-game", scaffold: { version: "1.0.0" } });
-    const scaffoldPkg = JSON.stringify({ name: "scaffold", scaffold: { version: "1.2.0" } });
-    const result = JSON.parse(applyScaffoldSyncMeta(gamePkg, scaffoldPkg, "2025-01-01", "abc123"));
-    expect(result.scaffold.version).toBe("1.2.0");
-    expect(result.scaffold.syncedAt).toBe("2025-01-01");
-    expect(result.scaffold.syncedFrom).toBe("abc123");
+describe("applyAminoSyncMeta (pure)", () => {
+  it("merges amino version from amino package", () => {
+    const gamePkg = JSON.stringify({ name: "my-game", amino: { version: "1.0.0" } });
+    const aminoPkg = JSON.stringify({ name: "amino", amino: { version: "1.2.0" } });
+    const result = JSON.parse(applyAminoSyncMeta(gamePkg, aminoPkg, "2025-01-01", "abc123"));
+    expect(result.amino.version).toBe("1.2.0");
+    expect(result.amino.syncedAt).toBe("2025-01-01");
+    expect(result.amino.syncedFrom).toBe("abc123");
   });
 
   it("preserves game name and other fields", () => {
-    const gamePkg = JSON.stringify({ name: "my-game", dependencies: { foo: "1.0.0" }, scaffold: { version: "1.0.0" } });
-    const scaffoldPkg = JSON.stringify({ name: "scaffold", scaffold: { version: "2.0.0" } });
-    const result = JSON.parse(applyScaffoldSyncMeta(gamePkg, scaffoldPkg, "2025-06-15", "def456"));
+    const gamePkg = JSON.stringify({ name: "my-game", dependencies: { foo: "1.0.0" }, amino: { version: "1.0.0" } });
+    const aminoPkg = JSON.stringify({ name: "amino", amino: { version: "2.0.0" } });
+    const result = JSON.parse(applyAminoSyncMeta(gamePkg, aminoPkg, "2025-06-15", "def456"));
     expect(result.name).toBe("my-game");
     expect(result.dependencies.foo).toBe("1.0.0");
-    expect(result.scaffold.version).toBe("2.0.0");
+    expect(result.amino.version).toBe("2.0.0");
   });
 
-  it("creates scaffold field if missing in game pkg", () => {
+  it("creates amino field if missing in game pkg", () => {
     const gamePkg = JSON.stringify({ name: "my-game" });
-    const scaffoldPkg = JSON.stringify({ name: "scaffold", scaffold: { version: "1.0.0" } });
-    const result = JSON.parse(applyScaffoldSyncMeta(gamePkg, scaffoldPkg, "2025-01-01", "abc123"));
-    expect(result.scaffold.version).toBe("1.0.0");
+    const aminoPkg = JSON.stringify({ name: "amino", amino: { version: "1.0.0" } });
+    const result = JSON.parse(applyAminoSyncMeta(gamePkg, aminoPkg, "2025-01-01", "abc123"));
+    expect(result.amino.version).toBe("1.0.0");
   });
 
-  it("falls back to game version if scaffold has no version", () => {
-    const gamePkg = JSON.stringify({ name: "my-game", scaffold: { version: "0.5.0" } });
-    const scaffoldPkg = JSON.stringify({ name: "scaffold" });
-    const result = JSON.parse(applyScaffoldSyncMeta(gamePkg, scaffoldPkg, "2025-01-01", "abc123"));
-    expect(result.scaffold.version).toBe("0.5.0");
+  it("falls back to game version if amino has no version", () => {
+    const gamePkg = JSON.stringify({ name: "my-game", amino: { version: "0.5.0" } });
+    const aminoPkg = JSON.stringify({ name: "amino" });
+    const result = JSON.parse(applyAminoSyncMeta(gamePkg, aminoPkg, "2025-01-01", "abc123"));
+    expect(result.amino.version).toBe("0.5.0");
   });
 
   it("falls back to 0.0.0 if neither has version", () => {
     const gamePkg = JSON.stringify({ name: "my-game" });
-    const scaffoldPkg = JSON.stringify({ name: "scaffold" });
-    const result = JSON.parse(applyScaffoldSyncMeta(gamePkg, scaffoldPkg, "2025-01-01", "abc123"));
-    expect(result.scaffold.version).toBe("0.0.0");
+    const aminoPkg = JSON.stringify({ name: "amino" });
+    const result = JSON.parse(applyAminoSyncMeta(gamePkg, aminoPkg, "2025-01-01", "abc123"));
+    expect(result.amino.version).toBe("0.0.0");
   });
 
   it("output ends with trailing newline", () => {
     const gamePkg = JSON.stringify({ name: "my-game" });
-    const scaffoldPkg = JSON.stringify({ name: "scaffold", scaffold: { version: "1.0.0" } });
-    const output = applyScaffoldSyncMeta(gamePkg, scaffoldPkg, "2025-01-01", "abc123");
+    const aminoPkg = JSON.stringify({ name: "amino", amino: { version: "1.0.0" } });
+    const output = applyAminoSyncMeta(gamePkg, aminoPkg, "2025-01-01", "abc123");
     expect(output.endsWith("\n")).toBe(true);
   });
 });
@@ -78,6 +78,7 @@ describe("scaffold-sync.ts (integration)", () => {
     // Set up scaffold repo
     mkdirSync(scaffoldDir, { recursive: true });
     runIn(scaffoldDir, "git init");
+    runIn(scaffoldDir, "git branch -M main");
     runIn(scaffoldDir, 'git config user.email "test@test.com"');
     runIn(scaffoldDir, 'git config user.name "Test"');
 
@@ -92,7 +93,7 @@ describe("scaffold-sync.ts (integration)", () => {
     writeFileSync(path.join(scaffoldDir, "src/game/config.ts"), 'export const game = "scaffold-template";\n');
     writeFileSync(
       path.join(scaffoldDir, "package.json"),
-      JSON.stringify({ name: "scaffold", scaffold: { version: "1.2.0" } }, null, 2) + "\n",
+      JSON.stringify({ name: "amino", amino: { version: "1.2.0" } }, null, 2) + "\n",
     );
     writeFileSync(path.join(scaffoldDir, "vite.config.ts"), "export default {};\n");
     writeFileSync(path.join(scaffoldDir, "tsconfig.json"), "{}\n");
@@ -100,7 +101,7 @@ describe("scaffold-sync.ts (integration)", () => {
     writeFileSync(path.join(scaffoldDir, "biome.json"), "{}\n");
     writeFileSync(path.join(scaffoldDir, ".gitattributes"), "src/game/** merge=ours\n");
 
-    runIn(scaffoldDir, "git add -A && git commit -m 'scaffold v1.2.0'");
+    runIn(scaffoldDir, 'git add -A && git commit -m "scaffold v1.2.0"');
 
     // Clone scaffold to create a "game" repo
     runIn(base, `git clone ${scaffoldDir} game`);
@@ -111,17 +112,17 @@ describe("scaffold-sync.ts (integration)", () => {
     writeFileSync(path.join(gameDir, "src/game/config.ts"), 'export const game = "my-game";\n');
     writeFileSync(
       path.join(gameDir, "package.json"),
-      JSON.stringify({ name: "my-game", scaffold: { version: "1.0.0" } }, null, 2) + "\n",
+      JSON.stringify({ name: "my-game", amino: { version: "1.0.0" } }, null, 2) + "\n",
     );
-    runIn(gameDir, "git add -A && git commit -m 'customize game'");
+    runIn(gameDir, 'git add -A && git commit -m "customize game"');
 
     // Now update scaffold with new content
     writeFileSync(path.join(scaffoldDir, "src/core/index.ts"), 'export const version = "1.2.0";\n');
     writeFileSync(path.join(scaffoldDir, "src/core/systems/audio.ts"), "export const audio = { volume: 1 };\n");
-    runIn(scaffoldDir, "git add -A && git commit -m 'scaffold update'");
+    runIn(scaffoldDir, 'git add -A && git commit -m "scaffold update"');
 
     // Rename the origin remote to "scaffold" (the sync script expects a "scaffold" remote)
-    runIn(gameDir, "git remote rename origin scaffold");
+    runIn(gameDir, "git remote rename origin amino");
   });
 
   afterEach(() => {
@@ -152,26 +153,26 @@ describe("scaffold-sync.ts (integration)", () => {
     runIn(gameDir, `bun run ${SYNC_SCRIPT}`);
 
     const pkg = readPkg(gameDir);
-    expect(pkg.scaffold.version).toBe("1.2.0");
-    expect(pkg.scaffold.syncedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/);
-    expect(pkg.scaffold.syncedFrom).toBeTruthy();
-    expect(typeof pkg.scaffold.syncedFrom).toBe("string");
+    expect(pkg.amino.version).toBe("1.2.0");
+    expect(pkg.amino.syncedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(pkg.amino.syncedFrom).toBeTruthy();
+    expect(typeof pkg.amino.syncedFrom).toBe("string");
   });
 
   it("adds scaffold remote automatically if missing", () => {
-    runIn(gameDir, "git remote remove scaffold");
+    runIn(gameDir, "git remote remove amino");
 
     const output = execSync(`bun run ${SYNC_SCRIPT}`, {
       cwd: gameDir,
       encoding: "utf-8",
-      env: { ...process.env, SCAFFOLD_URL: scaffoldDir },
+      env: { ...process.env, AMINO_URL: scaffoldDir },
       timeout: 15000,
     });
-    expect(output).toContain("Adding scaffold remote");
+    expect(output).toContain("Adding amino remote");
 
     // Verify the remote was added and sync completed
     const remotes = runIn(gameDir, "git remote -v");
-    expect(remotes).toContain("scaffold");
+    expect(remotes).toContain("amino");
   });
 
   it("rejects when working tree is dirty", () => {

@@ -20,10 +20,10 @@ export function createSessionTracker(
   service: AnalyticsService,
   initialScreen: string,
 ): () => void {
-  const trackSessionStart = service.createTracker('session_start', sessionStartSchema, ['base'], {});
-  const trackSessionPause = service.createTracker('session_pause', sessionPauseSchema, ['base'], {});
-  const trackSessionResume = service.createTracker('session_resume', sessionResumeSchema, ['base'], {});
-  const trackSessionEnd = service.createTracker('session_end', sessionEndSchema, ['base'], {});
+  const trackSessionStart = service.createTracker('session_start', sessionStartSchema, ['base'], { base: {} });
+  const trackSessionPause = service.createTracker('session_pause', sessionPauseSchema, ['base'], { base: {} });
+  const trackSessionResume = service.createTracker('session_resume', sessionResumeSchema, ['base'], { base: {} });
+  const trackSessionEnd = service.createTracker('session_end', sessionEndSchema, ['base'], { base: {} });
 
   let pausedAt: number | null = null;
 

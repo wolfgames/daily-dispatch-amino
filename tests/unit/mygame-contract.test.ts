@@ -7,6 +7,22 @@
 
 import { describe, it, expect, vi } from 'vitest';
 
+vi.hoisted(() => {
+  if (!('caches' in globalThis)) {
+    Object.defineProperty(globalThis, 'caches', {
+      value: {
+        open: async () => ({
+          match: async () => undefined,
+          put: async () => undefined,
+          delete: async () => false,
+          keys: async () => [],
+        }),
+      },
+      configurable: true,
+    });
+  }
+});
+
 vi.mock('@wolfgames/components/solid', () => ({
   Spinner: () => null,
   ProgressBar: () => null,

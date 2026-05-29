@@ -1,0 +1,1455 @@
+{
+  "frames": {
+    "bg-closing_truck.png": {
+      "frame": {
+        "x": 3,
+        "y": 3,
+        "w": 512,
+        "h": 683
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 512,
+        "h": 683
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 683
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bg-closing_truck_b.png": {
+      "frame": {
+        "x": 521,
+        "y": 3,
+        "w": 512,
+        "h": 683
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 512,
+        "h": 683
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 683
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bg-gameboard.png": {
+      "frame": {
+        "x": 3,
+        "y": 692,
+        "w": 512,
+        "h": 683
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 512,
+        "h": 683
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 683
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bg-warehouse_interior.png": {
+      "frame": {
+        "x": 521,
+        "y": 692,
+        "w": 512,
+        "h": 683
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 512,
+        "h": 683
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 683
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-grid_backing.png": {
+      "frame": {
+        "x": 1039,
+        "y": 3,
+        "w": 509,
+        "h": 509
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 509,
+        "h": 509
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 512
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ui-title.png": {
+      "frame": {
+        "x": 1039,
+        "y": 518,
+        "w": 506,
+        "h": 109
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 202,
+        "w": 506,
+        "h": 109
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 512
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_door_open.png": {
+      "frame": {
+        "x": 1039,
+        "y": 633,
+        "w": 407,
+        "h": 345
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 54,
+        "y": 79,
+        "w": 407,
+        "h": 345
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 512
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_door_closed.png": {
+      "frame": {
+        "x": 1039,
+        "y": 984,
+        "w": 272,
+        "h": 337
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 120,
+        "y": 86,
+        "w": 272,
+        "h": 337
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 512
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "character-marty_talking.png": {
+      "frame": {
+        "x": 1317,
+        "y": 984,
+        "w": 178,
+        "h": 250
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 42,
+        "y": 4,
+        "w": 178,
+        "h": 250
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "character-marty_surprised.png": {
+      "frame": {
+        "x": 3,
+        "y": 1381,
+        "w": 170,
+        "h": 249
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 28,
+        "y": 4,
+        "w": 170,
+        "h": 249
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "character-marty_thumbsup.png": {
+      "frame": {
+        "x": 179,
+        "y": 1381,
+        "w": 134,
+        "h": 247
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 60,
+        "y": 3,
+        "w": 134,
+        "h": 247
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "character-marty_idle.png": {
+      "frame": {
+        "x": 319,
+        "y": 1381,
+        "w": 135,
+        "h": 244
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 62,
+        "y": 6,
+        "w": 135,
+        "h": 244
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "character-marty_popup.png": {
+      "frame": {
+        "x": 1317,
+        "y": 1240,
+        "w": 229,
+        "h": 229
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 14,
+        "y": 14,
+        "w": 229,
+        "h": 229
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ui-button_audio.png": {
+      "frame": {
+        "x": 460,
+        "y": 1475,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ui-button_delete.png": {
+      "frame": {
+        "x": 594,
+        "y": 1475,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ui-button_restart.png": {
+      "frame": {
+        "x": 728,
+        "y": 1475,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ui-button_start.png": {
+      "frame": {
+        "x": 862,
+        "y": 1475,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ui-dialogue.png": {
+      "frame": {
+        "x": 996,
+        "y": 1475,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ui-palette_blue.png": {
+      "frame": {
+        "x": 1039,
+        "y": 1327,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ui-palette_cyan.png": {
+      "frame": {
+        "x": 1173,
+        "y": 1327,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ui-palette_orange.png": {
+      "frame": {
+        "x": 1130,
+        "y": 1475,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ui-palette_pink.png": {
+      "frame": {
+        "x": 1264,
+        "y": 1475,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ui-palette_purple.png": {
+      "frame": {
+        "x": 1398,
+        "y": 1475,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ui-palette_yellow.png": {
+      "frame": {
+        "x": 1554,
+        "y": 3,
+        "w": 128,
+        "h": 128
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_side_open_blue.png": {
+      "frame": {
+        "x": 1554,
+        "y": 137,
+        "w": 109,
+        "h": 62
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 34,
+        "w": 109,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_side_open_cyan.png": {
+      "frame": {
+        "x": 1554,
+        "y": 205,
+        "w": 109,
+        "h": 62
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 34,
+        "w": 109,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_side_open_orange.png": {
+      "frame": {
+        "x": 1554,
+        "y": 273,
+        "w": 109,
+        "h": 62
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 34,
+        "w": 109,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_side_open_pink.png": {
+      "frame": {
+        "x": 1554,
+        "y": 341,
+        "w": 109,
+        "h": 62
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 34,
+        "w": 109,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_side_open_purple.png": {
+      "frame": {
+        "x": 1554,
+        "y": 409,
+        "w": 109,
+        "h": 62
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 34,
+        "w": 109,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_side_open_yellow.png": {
+      "frame": {
+        "x": 1554,
+        "y": 477,
+        "w": 109,
+        "h": 62
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 34,
+        "w": 109,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_down_open_blue.png": {
+      "frame": {
+        "x": 1532,
+        "y": 1475,
+        "w": 52,
+        "h": 103
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 38,
+        "y": 13,
+        "w": 52,
+        "h": 103
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_down_open_cyan.png": {
+      "frame": {
+        "x": 1590,
+        "y": 545,
+        "w": 52,
+        "h": 103
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 38,
+        "y": 13,
+        "w": 52,
+        "h": 103
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_down_open_orange.png": {
+      "frame": {
+        "x": 1501,
+        "y": 633,
+        "w": 52,
+        "h": 103
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 38,
+        "y": 13,
+        "w": 52,
+        "h": 103
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_down_open_pink.png": {
+      "frame": {
+        "x": 1590,
+        "y": 654,
+        "w": 52,
+        "h": 103
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 38,
+        "y": 13,
+        "w": 52,
+        "h": 103
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_down_open_purple.png": {
+      "frame": {
+        "x": 1501,
+        "y": 742,
+        "w": 52,
+        "h": 103
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 38,
+        "y": 13,
+        "w": 52,
+        "h": 103
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_down_open_yellow.png": {
+      "frame": {
+        "x": 1452,
+        "y": 851,
+        "w": 52,
+        "h": 103
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 38,
+        "y": 13,
+        "w": 52,
+        "h": 103
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_up_open_blue.png": {
+      "frame": {
+        "x": 1590,
+        "y": 763,
+        "w": 64,
+        "h": 102
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 32,
+        "y": 13,
+        "w": 64,
+        "h": 102
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_up_open_cyan.png": {
+      "frame": {
+        "x": 1510,
+        "y": 851,
+        "w": 64,
+        "h": 102
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 32,
+        "y": 13,
+        "w": 64,
+        "h": 102
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_up_open_orange.png": {
+      "frame": {
+        "x": 1590,
+        "y": 871,
+        "w": 64,
+        "h": 102
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 32,
+        "y": 13,
+        "w": 64,
+        "h": 102
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_up_open_pink.png": {
+      "frame": {
+        "x": 1510,
+        "y": 959,
+        "w": 64,
+        "h": 102
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 32,
+        "y": 13,
+        "w": 64,
+        "h": 102
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_up_open_purple.png": {
+      "frame": {
+        "x": 1590,
+        "y": 979,
+        "w": 64,
+        "h": 102
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 32,
+        "y": 13,
+        "w": 64,
+        "h": 102
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_up_open_yellow.png": {
+      "frame": {
+        "x": 1501,
+        "y": 1067,
+        "w": 64,
+        "h": 102
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 32,
+        "y": 13,
+        "w": 64,
+        "h": 102
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_down_close_blue.png": {
+      "frame": {
+        "x": 1590,
+        "y": 1087,
+        "w": 50,
+        "h": 98
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 39,
+        "y": 18,
+        "w": 50,
+        "h": 98
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_down_close_cyan.png": {
+      "frame": {
+        "x": 1590,
+        "y": 1191,
+        "w": 50,
+        "h": 98
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 39,
+        "y": 18,
+        "w": 50,
+        "h": 98
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_down_close_orange.png": {
+      "frame": {
+        "x": 1590,
+        "y": 1295,
+        "w": 50,
+        "h": 98
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 39,
+        "y": 18,
+        "w": 50,
+        "h": 98
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_down_close_pink.png": {
+      "frame": {
+        "x": 1590,
+        "y": 1399,
+        "w": 50,
+        "h": 98
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 39,
+        "y": 18,
+        "w": 50,
+        "h": 98
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_down_close_purple.png": {
+      "frame": {
+        "x": 1590,
+        "y": 1503,
+        "w": 50,
+        "h": 98
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 39,
+        "y": 18,
+        "w": 50,
+        "h": 98
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_down_close_yellow.png": {
+      "frame": {
+        "x": 3,
+        "y": 1636,
+        "w": 50,
+        "h": 98
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 39,
+        "y": 18,
+        "w": 50,
+        "h": 98
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_side_close_blue.png": {
+      "frame": {
+        "x": 460,
+        "y": 1381,
+        "w": 98,
+        "h": 61
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 19,
+        "y": 35,
+        "w": 98,
+        "h": 61
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_side_close_cyan.png": {
+      "frame": {
+        "x": 564,
+        "y": 1381,
+        "w": 98,
+        "h": 61
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 19,
+        "y": 35,
+        "w": 98,
+        "h": 61
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_side_close_orange.png": {
+      "frame": {
+        "x": 668,
+        "y": 1381,
+        "w": 98,
+        "h": 61
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 19,
+        "y": 35,
+        "w": 98,
+        "h": 61
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_side_close_pink.png": {
+      "frame": {
+        "x": 772,
+        "y": 1381,
+        "w": 98,
+        "h": 61
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 19,
+        "y": 35,
+        "w": 98,
+        "h": 61
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_side_close_purple.png": {
+      "frame": {
+        "x": 876,
+        "y": 1381,
+        "w": 98,
+        "h": 61
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 19,
+        "y": 35,
+        "w": 98,
+        "h": 61
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_side_close_yellow.png": {
+      "frame": {
+        "x": 59,
+        "y": 1636,
+        "w": 98,
+        "h": 61
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 19,
+        "y": 35,
+        "w": 98,
+        "h": 61
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_up_close_blue.png": {
+      "frame": {
+        "x": 1532,
+        "y": 1584,
+        "w": 52,
+        "h": 98
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 38,
+        "y": 13,
+        "w": 52,
+        "h": 98
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_up_close_cyan.png": {
+      "frame": {
+        "x": 163,
+        "y": 1636,
+        "w": 52,
+        "h": 98
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 38,
+        "y": 13,
+        "w": 52,
+        "h": 98
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_up_close_orange.png": {
+      "frame": {
+        "x": 221,
+        "y": 1634,
+        "w": 52,
+        "h": 98
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 38,
+        "y": 13,
+        "w": 52,
+        "h": 98
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_up_close_pink.png": {
+      "frame": {
+        "x": 279,
+        "y": 1634,
+        "w": 52,
+        "h": 98
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 38,
+        "y": 13,
+        "w": 52,
+        "h": 98
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_up_close_purple.png": {
+      "frame": {
+        "x": 337,
+        "y": 1631,
+        "w": 52,
+        "h": 98
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 38,
+        "y": 13,
+        "w": 52,
+        "h": 98
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "prop-truck_up_close_yellow.png": {
+      "frame": {
+        "x": 395,
+        "y": 1631,
+        "w": 52,
+        "h": 98
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 38,
+        "y": 13,
+        "w": 52,
+        "h": 98
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "atlas-tiles-daily-dispatch.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1685,
+      "h": 1737
+    },
+    "scale": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "uid": "local-fallback-dispatch",
+  "name": "Daily Dispatch — Chapter 6",
+  "chapters": [
+    {
+      "id": 6,
+      "uid": "dispatch-chapter-6",
+      "name": "Dispatch 6",
+      "county": {
+        "uid": "county-default",
+        "name": "default",
+        "texturePack": {
+          "uid": "tp-county-default",
+          "name": "default",
+          "type": "common",
+          "packFileKey": "atlas-tiles-citylines.json"
+        }
+      },
+      "story": {
+        "uid": "story-dispatch-6",
+        "intro": "Hey! I was ready to sprint my whole shift, but some of my routes are twisted up. C'mon! Let's fix this so I can run it right!",
+        "headline": "Dispatch 6",
+        "chapterStart": "Hmm-hmm… yeah, nope. That bend's all wrong. I can't zoom like this.",
+        "completion": "Ha! Full shift unlocked! That's a tail-wagging dispatch right there!",
+        "imageUrl": "",
+        "articleUrl": ""
+      },
+      "texturePack": {
+        "uid": "tp-default",
+        "name": "default",
+        "type": "common",
+        "packFileKey": "atlas-tiles-citylines.json"
+      },
+      "levels": [
+        { "uid": "d6-level-1", "levelNumber": 1, "config": {}, "seed": 92001, "clues": [{ "uid": "d6-clue-1", "text": "Ohhh that's better! I can stretch my legs there." }] },
+        { "uid": "d6-level-2", "levelNumber": 2, "config": {}, "seed": 92002, "clues": [{ "uid": "d6-clue-2", "text": "Yes! Now I don't have to double back." }] },
+        { "uid": "d6-level-3", "levelNumber": 3, "config": {}, "seed": 92003, "clues": [{ "uid": "d6-clue-3", "text": "Hmm! This turn always smells important." }] },
+        { "uid": "d6-level-4", "levelNumber": 4, "config": {}, "seed": 92004, "clues": [{ "uid": "d6-clue-4", "text": "There it is! That click felt good." }] },
+        { "uid": "d6-level-5", "levelNumber": 5, "config": {}, "seed": 92005, "clues": [{ "uid": "d6-clue-5", "text": "We're getting fast now. I can feel it." }] },
+        { "uid": "d6-level-6", "levelNumber": 6, "config": {}, "seed": 92006, "clues": [{ "uid": "d6-clue-6", "text": "Almost a full sprint!" }] },
+        { "uid": "d6-level-7", "levelNumber": 7, "config": {}, "seed": 92007, "clues": [{ "uid": "d6-clue-7", "text": "YES! That lines up perfectly." }] }
+      ]
+    }
+  ]
+}

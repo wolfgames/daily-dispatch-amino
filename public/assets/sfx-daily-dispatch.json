@@ -1,0 +1,44 @@
+{
+  "src": [
+    "sfx-daily-dispatch.webm",
+    "sfx-daily-dispatch.mp3"
+  ],
+  "sprite": {
+    "block_slide": [
+      0,
+      374
+    ],
+    "block_hit_edge": [
+      474,
+      194
+    ],
+    "truck_door_close": [
+      768,
+      477
+    ],
+    "truck_drive_away": [
+      1345,
+      1088
+    ],
+    "block_exit": [
+      2533,
+      2000
+    ],
+    "level_complete": [
+      4633,
+      2000
+    ],
+    "chapter_complete": [
+      6733,
+      1000
+    ],
+    "eraser": [
+      7833,
+      8000
+    ],
+    "button_click": [
+      15933,
+      183
+    ]
+  }
+}

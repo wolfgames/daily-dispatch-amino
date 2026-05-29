@@ -4,10 +4,10 @@ import { writeFileSync, rmSync, readFileSync } from "node:fs";
 import { mkdtempSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { bumpVersion, validateBumpType, bumpScaffoldVersion, assertCleanWorkingTree } from "../../../scripts/scaffold-release";
+import { bumpVersion, validateBumpType, bumpAminoVersion, assertCleanWorkingTree } from "../../../scripts/amino-release.ts";
 
 const ROOT = path.resolve(import.meta.dirname, "../../..");
-const RELEASE_SCRIPT = path.join(ROOT, "scripts/scaffold-release.ts");
+const RELEASE_SCRIPT = path.join(ROOT, "scripts/amino-release.ts");
 
 let tempDir: string;
 
@@ -75,9 +75,9 @@ describe("scaffold-release.ts (integration)", () => {
     run('git config user.name "Test"');
     writeFileSync(
       path.join(tempDir, "package.json"),
-      JSON.stringify({ name: "test", scaffold: { version: "1.0.0" } }, null, 2) + "\n",
+      JSON.stringify({ name: "test", amino: { version: "1.0.0" } }, null, 2) + "\n",
     );
-    run("git add -A && git commit -m 'init'");
+    run('git add -A && git commit -m "init"');
   });
 
   afterEach(() => {
@@ -87,27 +87,27 @@ describe("scaffold-release.ts (integration)", () => {
   it("patch bump: 1.0.0 → 1.0.1", () => {
     run(`bun run ${RELEASE_SCRIPT} patch`);
     const pkg = readPkg();
-    expect(pkg.scaffold.version).toBe("1.0.1");
+    expect(pkg.amino.version).toBe("1.0.1");
     const tags = run("git tag").trim();
-    expect(tags).toContain("scaffold-v1.0.1");
+    expect(tags).toContain("amino-v1.0.1");
   });
 
   it("minor bump: 1.0.0 → 1.1.0", () => {
     run(`bun run ${RELEASE_SCRIPT} minor`);
     const pkg = readPkg();
-    expect(pkg.scaffold.version).toBe("1.1.0");
+    expect(pkg.amino.version).toBe("1.1.0");
     const tags = run("git tag").trim();
-    expect(tags).toContain("scaffold-v1.1.0");
+    expect(tags).toContain("amino-v1.1.0");
   });
 
   it("major bump: 1.0.0 → 2.0.0 with warning", () => {
     const output = run(`bun run ${RELEASE_SCRIPT} major`);
     const pkg = readPkg();
-    expect(pkg.scaffold.version).toBe("2.0.0");
+    expect(pkg.amino.version).toBe("2.0.0");
     expect(output).toContain("MAJOR VERSION BUMP");
     expect(output).toContain("full merge");
     const tags = run("git tag").trim();
-    expect(tags).toContain("scaffold-v2.0.0");
+    expect(tags).toContain("amino-v2.0.0");
   });
 
   it("rejects invalid bump type", () => {
@@ -134,10 +134,10 @@ describe("scaffold-release.ts (integration)", () => {
   });
 
   it("bumpScaffoldVersion writes correct version to disk", () => {
-    const version = bumpScaffoldVersion("patch", tempDir);
+    const version = bumpAminoVersion("patch", tempDir);
     expect(version).toBe("1.0.1");
     const pkg = readPkg();
-    expect(pkg.scaffold.version).toBe("1.0.1");
+    expect(pkg.amino.version).toBe("1.0.1");
   });
 
   it("assertCleanWorkingTree throws on dirty tree", () => {

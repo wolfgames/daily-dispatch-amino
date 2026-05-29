@@ -1,4 +1,4 @@
-import { ErrorBoundary as SolidErrorBoundary, type ParentProps } from 'solid-js';
+import { ErrorBoundary as SolidErrorBoundary, type JSX, type ParentProps } from 'solid-js';
 import { useGameTracking } from '~/game/setup/tracking';
 import { errorReporter } from './reporter';
 import type { ErrorSeverity } from './types';

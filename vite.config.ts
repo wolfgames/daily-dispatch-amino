@@ -2,7 +2,7 @@ import { defineConfig, loadEnv, type Plugin } from "vite";
 import solid from "vite-plugin-solid";
 import tailwindcss from "@tailwindcss/vite";
 import { networkInterfaces } from "os";
-import { realpathSync, existsSync } from "fs";
+import { realpathSync, existsSync, readFileSync } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -39,6 +39,35 @@ function qrcodePlugin(): Plugin {
   };
 }
 
+interface WolfGameKitConfig {
+  projectId?: string;
+  environment?: string;
+}
+
+function readWolfGameKitConfig(): WolfGameKitConfig {
+  const configPath = path.join(__dirname, "wolf-game-kit.json");
+  if (!existsSync(configPath)) return {};
+
+  try {
+    return JSON.parse(readFileSync(configPath, "utf-8")) as WolfGameKitConfig;
+  } catch {
+    return {};
+  }
+}
+
+function resolveGameKitEnv(envVars: Record<string, string>) {
+  const kitConfig = readWolfGameKitConfig();
+  return {
+    projectId: envVars.VITE_GAME_KIT_PROJECT_ID ?? kitConfig.projectId ?? "",
+    environment:
+      envVars.VITE_APP_ENV ??
+      envVars.VITE_GAME_KIT_ENV ??
+      kitConfig.environment ??
+      "Development",
+    posthogApiKey: envVars.VITE_POSTHOG_API_KEY ?? "",
+  };
+}
+
 function gameKitEnvPlugin(): Plugin {
   let envVars: Record<string, string>;
 
@@ -50,18 +79,19 @@ function gameKitEnvPlugin(): Plugin {
     },
     transform(code, id) {
       if (!id.includes("game-kit")) return;
+      const gameKitEnv = resolveGameKitEnv(envVars);
       return code
         .replace(
           /import\.meta\.env\.VITE_POSTHOG_API_KEY/g,
-          JSON.stringify(envVars.VITE_POSTHOG_API_KEY ?? ""),
+          JSON.stringify(gameKitEnv.posthogApiKey),
         )
         .replace(
           /import\.meta\.env\.VITE_APP_ENV/g,
-          JSON.stringify(envVars.VITE_APP_ENV ?? ""),
+          JSON.stringify(gameKitEnv.environment),
         )
         .replace(
           /import\.meta\.env\.VITE_GAME_KIT_PROJECT_ID/g,
-          JSON.stringify(envVars.VITE_GAME_KIT_PROJECT_ID ?? ""),
+          JSON.stringify(gameKitEnv.projectId),
         );
     },
   };
@@ -99,6 +129,7 @@ function gameKitEnvPlugin(): Plugin {
 
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, __dirname, "VITE_");
+  const gameKitEnv = resolveGameKitEnv(env);
   const isBuild = command === "build";
 
   // Safety: refuse local/source overrides for any `vite build` (production OR
@@ -159,11 +190,16 @@ export default defineConfig(({ command, mode }) => {
       ],
     },
     optimizeDeps: {
-      exclude: ["@wolfgames/components"],
+      exclude: ["@wolfgames/components", "@wolfgames/game-kit"],
       include: ["howler", "eventemitter3", "parse-svg-path", "@xmldom/xmldom"],
     },
     define: {
       "process.env": {},
+      "import.meta.env.VITE_APP_ENV": JSON.stringify(gameKitEnv.environment),
+      "import.meta.env.VITE_GAME_KIT_ENV": JSON.stringify(gameKitEnv.environment),
+      "import.meta.env.VITE_GAME_KIT_PROJECT_ID": JSON.stringify(
+        gameKitEnv.projectId,
+      ),
     },
     server: {
       host: true,

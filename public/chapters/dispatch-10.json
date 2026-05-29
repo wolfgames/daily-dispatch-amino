@@ -1,0 +1,45 @@
+{
+  "uid": "local-fallback-dispatch",
+  "name": "Daily Dispatch — Chapter 10",
+  "chapters": [
+    {
+      "id": 10,
+      "uid": "dispatch-chapter-10",
+      "name": "Dispatch 10",
+      "county": {
+        "uid": "county-default",
+        "name": "default",
+        "texturePack": {
+          "uid": "tp-county-default",
+          "name": "default",
+          "type": "common",
+          "packFileKey": "atlas-tiles-citylines.json"
+        }
+      },
+      "story": {
+        "uid": "story-dispatch-10",
+        "intro": "Hey-hey! Big dispatch today, but the whole route's scrambled. Every turn's wrong. Let's put this neighborhood back together!",
+        "headline": "Dispatch 10",
+        "chapterStart": "Hmm… whoa. This is the most mixed up I've seen it. But I know every inch of this place. We've got this.",
+        "completion": "HA! That's the biggest fix yet. Full dispatch, every corner covered. We're unstoppable!",
+        "imageUrl": "",
+        "articleUrl": ""
+      },
+      "texturePack": {
+        "uid": "tp-default",
+        "name": "default",
+        "type": "common",
+        "packFileKey": "atlas-tiles-citylines.json"
+      },
+      "levels": [
+        { "uid": "d10-level-1", "levelNumber": 1, "config": {}, "seed": 13201, "clues": [{ "uid": "d10-clue-1", "text": "Alright! First road's back in place." }] },
+        { "uid": "d10-level-2", "levelNumber": 2, "config": {}, "seed": 13202, "clues": [{ "uid": "d10-clue-2", "text": "Good. That corner was really bugging me." }] },
+        { "uid": "d10-level-3", "levelNumber": 3, "config": {}, "seed": 13203, "clues": [{ "uid": "d10-clue-3", "text": "Hmm-hmm… there's the familiar stretch. Wide open now." }] },
+        { "uid": "d10-level-4", "levelNumber": 4, "config": {}, "seed": 13204, "clues": [{ "uid": "d10-clue-4", "text": "Yes! That was the tough one. Feels great." }] },
+        { "uid": "d10-level-5", "levelNumber": 5, "config": {}, "seed": 13205, "clues": [{ "uid": "d10-clue-5", "text": "More than halfway. The shift's taking shape." }] },
+        { "uid": "d10-level-6", "levelNumber": 6, "config": {}, "seed": 13206, "clues": [{ "uid": "d10-clue-6", "text": "One more piece and I can run the whole thing." }] },
+        { "uid": "d10-level-7", "levelNumber": 7, "config": {}, "seed": 13207, "clues": [{ "uid": "d10-clue-7", "text": "BOOM! Every single road connects. Best dispatch yet!" }] }
+      ]
+    }
+  ]
+}

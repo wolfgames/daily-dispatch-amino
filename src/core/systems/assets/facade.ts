@@ -69,6 +69,9 @@ export interface AssetCoordinatorFacade {
   unloadBundle(name: string): void;
   unloadBundles(names: string[]): void;
   unloadScene(sceneName: string): void;
+  loadingState(): LoadingState;
+  getGpuLoader(): PixiLoader | null;
+  dispose(): void;
   audio: {
     play(channel: string, sprite?: string, opts?: { volume?: number }): number;
     stop(channel: string, id?: number): void;
@@ -150,12 +153,7 @@ export function createCoordinatorFacade(manifest: Manifest): AssetCoordinatorFac
   };
 
   const unloadBundle = (name: string) => {
-    const type = getLoaderTypeForBundle(name, manifest);
-    if (!type) return;
-    const loader = coordinator.getLoader(type);
-    if (loader && typeof (loader as { unloadBundle?: (n: string) => void }).unloadBundle === 'function') {
-      (loader as { unloadBundle: (n: string) => void }).unloadBundle(name);
-    }
+    coordinator.unloadBundle(name);
   };
 
   const unloadBundles = (names: string[]) => {
@@ -207,6 +205,9 @@ export function createCoordinatorFacade(manifest: Manifest): AssetCoordinatorFac
     unloadBundle,
     unloadBundles,
     unloadScene,
+    loadingState: () => coordinator.loadingState.get(),
+    getGpuLoader: () => coordinator.getLoader<PixiLoader>('gpu'),
+    dispose: () => coordinator.dispose(),
 
     audio: {
       play(channel: string, sprite?: string, opts?: { volume?: number }): number {

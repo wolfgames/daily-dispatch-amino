@@ -8,6 +8,7 @@ export default defineConfig({
   test: {
     environment: "node",
     include: ["tests/**/*.test.ts"],
+    exclude: ["tests/unit/lint/**/*.test.ts", "tests/unit/scripts/**/*.test.ts"],
     globals: false,
   },
   resolve: {

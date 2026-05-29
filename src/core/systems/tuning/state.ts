@@ -1,5 +1,5 @@
 import { createSignal, createRoot, batch } from 'solid-js';
-import { createStore, produce, reconcile } from 'solid-js/store';
+import { createStore, produce, reconcile, type SetStoreFunction } from 'solid-js/store';
 import type { ScaffoldTuning, GameTuningBase, TuningState, TuningSource } from './types';
 import { SCAFFOLD_DEFAULTS } from './types';
 import {
@@ -14,7 +14,7 @@ import {
  * Set a nested path in an object using produce (for stores)
  */
 function setStorePath<T extends object>(
-  setStore: (fn: (state: T) => void) => void,
+  setStore: SetStoreFunction<T>,
   path: string,
   value: unknown
 ): void {

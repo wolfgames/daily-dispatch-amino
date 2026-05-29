@@ -8,7 +8,7 @@ const FIXTURES_DIR = path.join(ROOT, "tests/unit/lint/.fixtures");
 
 function biomeLint(filePath: string): string {
   try {
-    return execSync(`npx @biomejs/biome lint ${filePath} --diagnostic-level=error`, {
+    return execSync(`bunx biome lint ${filePath} --diagnostic-level=error`, {
       cwd: ROOT,
       encoding: "utf-8",
       stdio: ["pipe", "pipe", "pipe"],

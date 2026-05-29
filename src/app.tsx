@@ -14,7 +14,7 @@ import {
   FeatureFlagProvider,
 } from '~/core';
 import { initSentry } from '~/core/lib/sentry';
-import { parseEnvironment } from '@wolfgames/game-kit';
+import { parseEnvironment, type AnalyticsService } from '@wolfgames/game-kit';
 import { gameConfig, defaultGameData } from '~/game';
 import { manifest } from '~/game/asset-manifest';
 import {
@@ -45,20 +45,27 @@ import { createLoadingTracker } from '~/core/systems/analytics/loading-tracker';
 import { useAssetCoordinator } from '~/core/systems/assets';
 import { EmbedProvider, AttractGate } from '~/integrations/embed';
 import { EmbedHook } from '~/game/EmbedHook';
+import { clearLegacyProgress } from '~/game/mygame/services/legacy-progress-adapter';
 
 // Build URL overrides (applied after load, not saved to localStorage)
 const urlViewportMode = getViewportModeFromUrl();
-const environment = parseEnvironment(import.meta.env.VITE_GAME_KIT_ENV);
+const environment = parseEnvironment(
+  import.meta.env.VITE_APP_ENV ?? import.meta.env.VITE_GAME_KIT_ENV,
+);
 
 /** Reset progress and reload the page */
 const handleResetProgress = () => {
+  clearLegacyProgress();
   window.location.reload();
 };
 
 /** Wires session lifecycle events (start, pause, resume, end) */
 function SessionTrackerBridge() {
   const service = useAnalyticsService();
-  const cleanup = createSessionTracker(service, gameConfig.initialScreen);
+  const cleanup = createSessionTracker(
+    service as unknown as AnalyticsService,
+    gameConfig.initialScreen,
+  );
   onCleanup(cleanup);
   return null;
 }
@@ -67,7 +74,10 @@ function SessionTrackerBridge() {
 function LoadingTrackerBridge() {
   const service = useAnalyticsService();
   const coordinator = useAssetCoordinator();
-  const cleanup = createLoadingTracker(service, coordinator.loadingStateSignal);
+  const cleanup = createLoadingTracker(
+    service as unknown as AnalyticsService,
+    coordinator.loadingStateSignal as never,
+  );
   onCleanup(cleanup);
   return null;
 }
@@ -79,10 +89,30 @@ function GameSettingsMenu() {
   return (
     <SettingsMenu
       onResetProgress={!config.isProduction() ? handleResetProgress : undefined}
-      onAudioSettingChanged={trackAudioSettingChanged}
+      onAudioSettingChanged={(params) =>
+        trackAudioSettingChanged({
+          ...params,
+          setting_type: params.setting_type as 'volume' | 'mute',
+        })
+      }
     />
   );
 }
+
+const DailyDispatchManifestBoundary: ParentComponent = (props) => {
+  const config = useGameConfig();
+
+  return (
+    <Show when={config.ready()}>
+      <GameManifestProvider
+        manifest={manifest}
+        defaultGameData={defaultGameData}
+      >
+        {props.children}
+      </GameManifestProvider>
+    </Show>
+  );
+};
 
 /**
  * Bridges the tuning system ↔ viewport system.
@@ -154,19 +184,16 @@ export default function App() {
                       </div>
                     </DevOnly>
                     <PauseProvider>
-                      <GameManifestProvider
-                        manifest={manifest}
-                        defaultGameData={defaultGameData}
-                      >
+                      <DailyDispatchManifestBoundary>
                         <AssetProvider>
                           <LoadingTrackerBridge />
                           <ScreenProvider options={{ initialScreen: gameConfig.initialScreen, screenAssets: gameConfig.screenAssets }}>
                             <AttractGate hook={(engage) => <EmbedHook engage={engage} />}>
-                              <ScreenRenderer screens={gameConfig.screens} />
+                              <ScreenRenderer screens={gameConfig.screens as never} />
                             </AttractGate>
                           </ScreenProvider>
                         </AssetProvider>
-                      </GameManifestProvider>
+                      </DailyDispatchManifestBoundary>
                     </PauseProvider>
                   </ViewportModeWrapper>
                 </TuningViewportBridge>

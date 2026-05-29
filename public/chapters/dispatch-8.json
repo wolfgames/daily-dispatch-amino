@@ -1,0 +1,45 @@
+{
+  "uid": "local-fallback-dispatch",
+  "name": "Daily Dispatch — Chapter 8",
+  "chapters": [
+    {
+      "id": 8,
+      "uid": "dispatch-chapter-8",
+      "name": "Dispatch 8",
+      "county": {
+        "uid": "county-default",
+        "name": "default",
+        "texturePack": {
+          "uid": "tp-county-default",
+          "name": "default",
+          "type": "common",
+          "packFileKey": "atlas-tiles-citylines.json"
+        }
+      },
+      "story": {
+        "uid": "story-dispatch-8",
+        "intro": "Hey! My usual route feels all jumbled up today. Roads are crossed where they shouldn't be. Let's untangle this!",
+        "headline": "Dispatch 8",
+        "chapterStart": "Hmm… yeah, this is a mess. I know where everything should go, but nothing's connecting. Time to sort it out.",
+        "completion": "There it is! Every road's back where it belongs. That's a good dispatch!",
+        "imageUrl": "",
+        "articleUrl": ""
+      },
+      "texturePack": {
+        "uid": "tp-default",
+        "name": "default",
+        "type": "common",
+        "packFileKey": "atlas-tiles-citylines.json"
+      },
+      "levels": [
+        { "uid": "d8-level-1", "levelNumber": 1, "config": {}, "seed": 11201, "clues": [{ "uid": "d8-clue-1", "text": "There we go. First crossing untangled." }] },
+        { "uid": "d8-level-2", "levelNumber": 2, "config": {}, "seed": 11202, "clues": [{ "uid": "d8-clue-2", "text": "Nice. That stretch feels right again." }] },
+        { "uid": "d8-level-3", "levelNumber": 3, "config": {}, "seed": 11203, "clues": [{ "uid": "d8-clue-3", "text": "Hmm-hmm… I remember this spot. Good to have it back." }] },
+        { "uid": "d8-level-4", "levelNumber": 4, "config": {}, "seed": 11204, "clues": [{ "uid": "d8-clue-4", "text": "That's the one. The whole middle section just clicked." }] },
+        { "uid": "d8-level-5", "levelNumber": 5, "config": {}, "seed": 11205, "clues": [{ "uid": "d8-clue-5", "text": "Getting close. I can feel the shift forming." }] },
+        { "uid": "d8-level-6", "levelNumber": 6, "config": {}, "seed": 11206, "clues": [{ "uid": "d8-clue-6", "text": "Almost done. Just one more tangle to fix." }] },
+        { "uid": "d8-level-7", "levelNumber": 7, "config": {}, "seed": 11207, "clues": [{ "uid": "d8-clue-7", "text": "Yes! Clean lines all the way through." }] }
+      ]
+    }
+  ]
+}

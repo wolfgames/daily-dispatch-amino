@@ -1,0 +1,64 @@
+{
+  "initial": {
+    "chapterUid": "dispatch-chapter-1",
+    "levelUid": "d1-level-1",
+    "seed": 42001,
+    "storyPhase": "introduction",
+    "introText": "Hey there I'm Marty. Managing this floor for the last 32 years."
+  },
+  "playing": {
+    "storyPhase": "playing",
+    "chapterStartText": "See! Easy as that! Let's keep on shipping."
+  },
+  "completed": {
+    "levelUid": "d1-level-1",
+    "seed": 42001,
+    "moveCount": 6,
+    "levelPhase": "complete",
+    "audioCueCounts": {
+      "block_slide": 6,
+      "block_exit": 2,
+      "truck_door_close": 2,
+      "truck_drive_away": 2,
+      "level_complete": 1,
+      "chapter_complete": 0,
+      "music_1": 1
+    },
+    "completionState": {
+      "state": "completing",
+      "isInputBlocked": true,
+      "canContinue": true
+    }
+  },
+  "nextLevel": {
+    "advanceKind": "next-level",
+    "levelUid": "d1-level-2",
+    "seed": 42002,
+    "storyPhase": "playing"
+  },
+  "laterChapter": {
+    "chapterUid": "dispatch-chapter-10",
+    "levelUid": "d10-level-1",
+    "seed": 13201,
+    "levelCount": 7,
+    "storyPhase": "chapter-start",
+    "chapterStartText": "Hmm… whoa. This is the most mixed up I've seen it. But I know every inch of this place. We've got this.",
+    "completionText": "HA! That's the biggest fix yet. Full dispatch, every corner covered. We're unstoppable!"
+  },
+  "progressKeys": {
+    "game_progress": "{\"version\":1,\"current\":{\"manifestUrl\":\"\",\"chapterId\":\"dispatch-chapter-10\",\"countyName\":\"default\",\"chapterLength\":7,\"currentLevel\":1,\"startedAt\":1780089332422,\"catalogIndex\":9,\"levelSeed\":13201},\"completed\":[],\"lastPlayedAt\":1780089340253}",
+    "game_has_played": "true",
+    "game_block_state": "{\"positions\":{\"block_yellow\":{\"col\":0,\"row\":0},\"block_orange\":{\"col\":0,\"row\":1}},\"exitedIds\":[],\"moveCount\":0}"
+  },
+  "analyticsCounts": {
+    "level_start": 3,
+    "chapter_start": 2,
+    "level_complete": 1
+  },
+  "canvasCount": 1,
+  "consoleErrors": [],
+  "requestFailures": [],
+  "badResponses": [],
+  "mediaRequests": [],
+  "screenshotPath": "C:\\Users\\Felip\\Projects\\wolf-games\\dispatch\\daily-dispatch-amino\\pipeline\\runs\\run-10-2026-05-29-t14-full-chapter-parity-polish\\runtime-gate-chapter-10.png"
+}

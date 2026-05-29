@@ -1,0 +1,45 @@
+{
+  "uid": "local-fallback-dispatch",
+  "name": "Daily Dispatch — Chapter 2",
+  "chapters": [
+    {
+      "id": 2,
+      "uid": "dispatch-chapter-2",
+      "name": "Dispatch 2",
+      "county": {
+        "uid": "county-default",
+        "name": "default",
+        "texturePack": {
+          "uid": "tp-county-default",
+          "name": "default",
+          "type": "common",
+          "packFileKey": "atlas-tiles-citylines.json"
+        }
+      },
+      "story": {
+        "uid": "story-dispatch-2",
+        "intro": "Hey. I'm Marty. My dispatch shift isn't fully connected today. Let's open up the routes so I can get moving.",
+        "headline": "Dispatch 2",
+        "chapterStart": "Hmm\u2026 something's off. A few parts of my route don't feel right. Let's straighten it out.",
+        "completion": "Now we're moving! The whole shift's wide open.",
+        "imageUrl": "",
+        "articleUrl": ""
+      },
+      "texturePack": {
+        "uid": "tp-default",
+        "name": "default",
+        "type": "common",
+        "packFileKey": "atlas-tiles-citylines.json"
+      },
+      "levels": [
+        { "uid": "d2-level-1", "levelNumber": 1, "config": {}, "seed": 52001, "clues": [{ "uid": "d2-clue-1", "text": "There we go. That feels better already." }] },
+        { "uid": "d2-level-2", "levelNumber": 2, "config": {}, "seed": 52002, "clues": [{ "uid": "d2-clue-2", "text": "Nice. I can move through here again." }] },
+        { "uid": "d2-level-3", "levelNumber": 3, "config": {}, "seed": 52003, "clues": [{ "uid": "d2-clue-3", "text": "Hmm-hmm\u2026 this part always helps the shift flow." }] },
+        { "uid": "d2-level-4", "levelNumber": 4, "config": {}, "seed": 52004, "clues": [{ "uid": "d2-clue-4", "text": "Good. I don't have to double back anymore." }] },
+        { "uid": "d2-level-5", "levelNumber": 5, "config": {}, "seed": 52005, "clues": [{ "uid": "d2-clue-5", "text": "Almost there. Just a little more to fix." }] },
+        { "uid": "d2-level-6", "levelNumber": 6, "config": {}, "seed": 52006, "clues": [{ "uid": "d2-clue-6", "text": "That's it. The long stretch is open again." }] },
+        { "uid": "d2-level-7", "levelNumber": 7, "config": {}, "seed": 52007, "clues": [{ "uid": "d2-clue-7", "text": "Perfect. Everything lines up the way it should." }] }
+      ]
+    }
+  ]
+}

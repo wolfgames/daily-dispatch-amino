@@ -1,0 +1,45 @@
+{
+  "uid": "local-fallback-dispatch",
+  "name": "Daily Dispatch — Chapter 1",
+  "chapters": [
+    {
+      "id": 1,
+      "uid": "dispatch-chapter-1",
+      "name": "Dispatch 1",
+      "county": {
+        "uid": "county-default",
+        "name": "default",
+        "texturePack": {
+          "uid": "tp-county-default",
+          "name": "default",
+          "type": "common",
+          "packFileKey": "atlas-tiles-citylines.json"
+        }
+      },
+      "story": {
+        "uid": "story-dispatch-1",
+        "intro": "Hey there I'm Marty. Managing this floor for the last 32 years.",
+        "headline": "Dispatch 1",
+        "chapterStart": "See! Easy as that! Let's keep on shipping.",
+        "completion": "Farm wagons. Wagons? For a computer brand? This doesn't add up.",
+        "funFact": "Cow chips. Dried cow manure. Caked in the sun. Flipped for a month, then thrown for distance. Forty-three years running. State records 248 feet. Only in Wisconsin.",
+        "articleUrl": ""
+      },
+      "texturePack": {
+        "uid": "tp-default",
+        "name": "default",
+        "type": "common",
+        "packFileKey": "atlas-tiles-citylines.json"
+      },
+      "levels": [
+        { "uid": "d1-level-1", "levelNumber": 1, "config": {}, "seed": 42001, "clues": [{ "uid": "d1-clue-1", "text": "See! Easy as that! Let's keep on shipping." }] },
+        { "uid": "d1-level-2", "levelNumber": 2, "config": {}, "seed": 42002, "clues": [{ "uid": "d1-clue-2", "text": "That's the way. Keep those packages moving." }] },
+        { "uid": "d1-level-3", "levelNumber": 3, "config": {}, "seed": 42003, "clues": [{ "uid": "d1-clue-3", "text": "You're getting the hang of this. Stay sharp." }] },
+        { "uid": "d1-level-4", "levelNumber": 4, "config": {}, "seed": 42004, "clues": [{ "uid": "d1-clue-4", "text": "Nice work. This floor runs smooth when the routes are clear." }] },
+        { "uid": "d1-level-5", "levelNumber": 5, "config": {}, "seed": 42005, "clues": [{ "uid": "d1-clue-5", "text": "Almost done with this batch. Keep it up." }] },
+        { "uid": "d1-level-6", "levelNumber": 6, "config": {}, "seed": 42006, "clues": [{ "uid": "d1-clue-6", "text": "Good hustle. Just a few more to go." }] },
+        { "uid": "d1-level-7", "levelNumber": 7, "config": {}, "seed": 42007, "clues": [{ "uid": "d1-clue-7", "text": "All packages loaded! Another dispatch cleared." }] }
+      ]
+    }
+  ]
+}

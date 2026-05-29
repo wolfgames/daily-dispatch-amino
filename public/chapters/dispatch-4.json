@@ -1,0 +1,45 @@
+{
+  "uid": "local-fallback-dispatch",
+  "name": "Daily Dispatch — Chapter 4",
+  "chapters": [
+    {
+      "id": 4,
+      "uid": "dispatch-chapter-4",
+      "name": "Dispatch 4",
+      "county": {
+        "uid": "county-default",
+        "name": "default",
+        "texturePack": {
+          "uid": "tp-county-default",
+          "name": "default",
+          "type": "common",
+          "packFileKey": "atlas-tiles-citylines.json"
+        }
+      },
+      "story": {
+        "uid": "story-dispatch-4",
+        "intro": "Hey there. I was just about to start my dispatch, but something's not lining up. Let's reconnect the routes so I can get going.",
+        "headline": "Dispatch 4",
+        "chapterStart": "Hmm\u2026 yeah, that's not right. My shift's all twisted up. We can fix this.",
+        "completion": "Hey! That's what I'm talking about. Full shift, clear routes \u2014 dispatch complete!",
+        "imageUrl": "",
+        "articleUrl": ""
+      },
+      "texturePack": {
+        "uid": "tp-default",
+        "name": "default",
+        "type": "common",
+        "packFileKey": "atlas-tiles-citylines.json"
+      },
+      "levels": [
+        { "uid": "d4-level-1", "levelNumber": 1, "config": {}, "seed": 72001, "clues": [{ "uid": "d4-clue-1", "text": "There we go. That's a good start." }] },
+        { "uid": "d4-level-2", "levelNumber": 2, "config": {}, "seed": 72002, "clues": [{ "uid": "d4-clue-2", "text": "Nice. I can stretch my legs through here again." }] },
+        { "uid": "d4-level-3", "levelNumber": 3, "config": {}, "seed": 72003, "clues": [{ "uid": "d4-clue-3", "text": "Hmm-hmm\u2026 that's one of my favorite stretches. Glad it's open." }] },
+        { "uid": "d4-level-4", "levelNumber": 4, "config": {}, "seed": 72004, "clues": [{ "uid": "d4-clue-4", "text": "Okay! The middle's starting to feel connected." }] },
+        { "uid": "d4-level-5", "levelNumber": 5, "config": {}, "seed": 72005, "clues": [{ "uid": "d4-clue-5", "text": "Almost there. I can see the rest of the shift coming together." }] },
+        { "uid": "d4-level-6", "levelNumber": 6, "config": {}, "seed": 72006, "clues": [{ "uid": "d4-clue-6", "text": "Yes! That was the tricky part." }] },
+        { "uid": "d4-level-7", "levelNumber": 7, "config": {}, "seed": 72007, "clues": [{ "uid": "d4-clue-7", "text": "Perfect. Everything's lined up just right." }] }
+      ]
+    }
+  ]
+}

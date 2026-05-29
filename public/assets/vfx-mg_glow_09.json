@@ -1,0 +1,313 @@
+{
+  "frames": {
+    "vfx-mg_glow_09_0000": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-mg_glow_09_0001": {
+      "frame": {
+        "x": 256,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-mg_glow_09_0002": {
+      "frame": {
+        "x": 512,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-mg_glow_09_0003": {
+      "frame": {
+        "x": 768,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-mg_glow_09_0004": {
+      "frame": {
+        "x": 0,
+        "y": 144,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-mg_glow_09_0005": {
+      "frame": {
+        "x": 256,
+        "y": 144,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-mg_glow_09_0006": {
+      "frame": {
+        "x": 512,
+        "y": 144,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-mg_glow_09_0007": {
+      "frame": {
+        "x": 768,
+        "y": 144,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-mg_glow_09_0008": {
+      "frame": {
+        "x": 0,
+        "y": 288,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-mg_glow_09_0009": {
+      "frame": {
+        "x": 256,
+        "y": 288,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-mg_glow_09_0010": {
+      "frame": {
+        "x": 512,
+        "y": 288,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-mg_glow_09_0011": {
+      "frame": {
+        "x": 768,
+        "y": 288,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-mg_glow_09_0012": {
+      "frame": {
+        "x": 0,
+        "y": 432,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-mg_glow_09_0013": {
+      "frame": {
+        "x": 256,
+        "y": 432,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    }
+  },
+  "animations": {
+    "glow": [
+      "vfx-mg_glow_09_0000",
+      "vfx-mg_glow_09_0001",
+      "vfx-mg_glow_09_0002",
+      "vfx-mg_glow_09_0003",
+      "vfx-mg_glow_09_0004",
+      "vfx-mg_glow_09_0005",
+      "vfx-mg_glow_09_0006",
+      "vfx-mg_glow_09_0007",
+      "vfx-mg_glow_09_0008",
+      "vfx-mg_glow_09_0009",
+      "vfx-mg_glow_09_0010",
+      "vfx-mg_glow_09_0011",
+      "vfx-mg_glow_09_0012",
+      "vfx-mg_glow_09_0013"
+    ]
+  },
+  "meta": {
+    "app": "https://pixijs.com",
+    "version": "1.0",
+    "image": "vfx-mg_glow_09.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1024,
+      "h": 576
+    },
+    "scale": "1"
+  }
+}

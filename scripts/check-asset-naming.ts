@@ -8,10 +8,11 @@
  *   bun run scripts/check-asset-naming.ts --suggest # print suggested renames
  */
 
-import { readdirSync, statSync } from "node:fs";
-import { join, relative } from "node:path";
+import { readFileSync, readdirSync, statSync } from "node:fs";
+import { join, relative, sep } from "node:path";
 
 const ASSETS_DIR = join(import.meta.dir, "..", "public", "assets");
+const EXCEPTIONS_FILE = join(import.meta.dir, "asset-naming-exceptions.json");
 
 // Raw asset pattern: {category}-{name}[_{variant}].{ext}
 const RAW_REGEX =
@@ -49,6 +50,54 @@ const VFX_SUBPATH_BASENAME = /^[a-z0-9_-]+\.(json|png|jpg|jpeg|webp|gif|svg)$/;
 // Fonts in fonts/ subfolder (e.g. Baloo-Regular.woff2) - allow common font naming
 const FONTS_BASENAME = /^[a-zA-Z0-9_-]+\.(woff2?|ttf|otf)$/;
 
+type AssetNamingException = {
+  path: string;
+  reason: "scaffold-carried" | "source-artifact" | "runtime-adapter";
+  note: string;
+};
+
+function isExceptionEntry(value: unknown): value is AssetNamingException {
+  if (value === null || typeof value !== "object") return false;
+  const entry = value as Record<string, unknown>;
+  return (
+    typeof entry.path === "string" &&
+    typeof entry.reason === "string" &&
+    typeof entry.note === "string" &&
+    ["scaffold-carried", "source-artifact", "runtime-adapter"].includes(entry.reason)
+  );
+}
+
+function loadAssetNamingExceptions(): Map<string, AssetNamingException> {
+  if (!statSync(EXCEPTIONS_FILE, { throwIfNoEntry: false })?.isFile()) {
+    return new Map();
+  }
+
+  const parsed = JSON.parse(readFileSync(EXCEPTIONS_FILE, "utf8")) as unknown;
+  if (!Array.isArray(parsed)) {
+    console.error("check:assets — asset-naming-exceptions.json must be an array.");
+    process.exit(1);
+  }
+
+  const exceptions = new Map<string, AssetNamingException>();
+  for (const value of parsed) {
+    if (!isExceptionEntry(value)) {
+      console.error("check:assets — invalid exception entry:", value);
+      process.exit(1);
+    }
+    if (value.path.startsWith("/") || value.path.includes("..") || value.path.includes("\\")) {
+      console.error(`check:assets — invalid exception path: ${value.path}`);
+      process.exit(1);
+    }
+    if (exceptions.has(value.path)) {
+      console.error(`check:assets — duplicate exception path: ${value.path}`);
+      process.exit(1);
+    }
+    exceptions.set(value.path, value);
+  }
+
+  return exceptions;
+}
+
 function isPackedBasename(basename: string): boolean {
   return PACKED_PATTERNS.some((re) => re.test(basename));
 }
@@ -82,7 +131,7 @@ function collectFiles(dir: string, baseDir: string): { relPath: string; basename
   for (const e of entries) {
     if (e.name.startsWith(".")) continue; // skip .gitkeep, .git, etc.
     const full = join(dir, e.name);
-    const rel = relative(baseDir, full);
+    const rel = relative(baseDir, full).split(sep).join("/");
     if (e.isDirectory()) {
       out.push(...collectFiles(full, baseDir));
     } else {
@@ -99,11 +148,19 @@ function main(): void {
     process.exit(1);
   }
   const files = collectFiles(ASSETS_DIR, ASSETS_DIR);
+  const exceptions = loadAssetNamingExceptions();
+  const filePaths = new Set(files.map((file) => file.relPath));
+  const staleExceptions = [...exceptions.keys()].filter((path) => !filePaths.has(path));
   const invalid: { relPath: string; basename: string; suggested?: string }[] = [];
+  let allowedExceptionCount = 0;
 
   for (const { relPath, basename } of files) {
     if (isPackedBasename(basename)) continue;
     if (isRawBasename(basename)) continue;
+    if (exceptions.has(relPath)) {
+      allowedExceptionCount += 1;
+      continue;
+    }
     // vfx subpath (e.g. vfx/effects/default.json)
     if (relPath.startsWith("vfx/") && VFX_SUBPATH_BASENAME.test(basename)) continue;
     // fonts subfolder
@@ -115,8 +172,19 @@ function main(): void {
     });
   }
 
+  if (staleExceptions.length > 0) {
+    console.error("check:assets — Stale asset naming exceptions:\n");
+    for (const relPath of staleExceptions) {
+      console.error(`  ${relPath}`);
+    }
+    console.error("\nRemove stale entries from scripts/asset-naming-exceptions.json.");
+    process.exit(1);
+  }
+
   if (invalid.length === 0) {
-    console.log("check:assets — All asset filenames conform to the naming convention.");
+    const suffix =
+      allowedExceptionCount > 0 ? ` (${allowedExceptionCount} exact-path exception(s) allowed)` : "";
+    console.log(`check:assets — All asset filenames conform to the naming convention${suffix}.`);
     process.exit(0);
   }
 

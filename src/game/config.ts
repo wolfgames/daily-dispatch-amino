@@ -13,6 +13,8 @@ import { ResultsScreen } from './screens/ResultsScreen';
 
 /** Game font family — loaded via @font-face in app.css */
 export const GAME_FONT_FAMILY = 'Baloo, system-ui, sans-serif';
+export const GAME_TITLE = 'Daily Dispatch';
+export const GAME_SLUG = 'daily-dispatch-amino';
 
 // ============================================================================
 // DATA TYPES
@@ -28,13 +30,11 @@ export interface DialogueMessage {
   text: string;
 }
 
-/**
- * Game data fetched from server / injected by host.
- * Replace with your game's actual data shape.
- */
 export interface GameData {
   uid: string;
   name: string;
+  slug: string;
+  chapterCatalogPath: string;
 }
 // ============================================================================
 // SCREEN WIRING

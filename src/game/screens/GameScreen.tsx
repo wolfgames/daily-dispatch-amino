@@ -18,7 +18,7 @@ export default function GameScreen() {
   const tuning = useTuning<ScaffoldTuning, GameTuning>();
   const audio = useAudio();
   const gameData = useGameData();
-  const { core: analytics } = useGameTracking();
+  const analytics = useGameTracking();
   let containerRef: HTMLDivElement | undefined;
 
   // Setup game-specific controller (creates signals & effects in reactive context)

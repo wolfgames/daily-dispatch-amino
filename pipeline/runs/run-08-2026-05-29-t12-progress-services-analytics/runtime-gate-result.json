@@ -1,0 +1,43 @@
+{
+  "firstRun": {
+    "levelOneSeed": 42001,
+    "levelTwoSeed": 42002,
+    "progressKeys": {
+      "game_progress": "{\"version\":1,\"current\":{\"manifestUrl\":\"\",\"chapterId\":\"dispatch-chapter-1\",\"countyName\":\"default\",\"chapterLength\":7,\"currentLevel\":2,\"startedAt\":1780066445392,\"catalogIndex\":0,\"levelSeed\":42002},\"completed\":[],\"lastPlayedAt\":1780066445456}",
+      "game_has_played": "true",
+      "game_block_state": "{\"positions\":{\"block_orange\":{\"col\":0,\"row\":5},\"block_pink\":{\"col\":0,\"row\":0}},\"exitedIds\":[],\"moveCount\":0}"
+    },
+    "analyticsCounts": {
+      "level_start": 2,
+      "chapter_start": 1
+    },
+    "analyticsEventNames": [
+      "level_start",
+      "chapter_start",
+      "level_start"
+    ],
+    "canvasCount": 1
+  },
+  "reload": {
+    "seed": 42002,
+    "chapterUid": "dispatch-chapter-1",
+    "levelNumber": 2,
+    "storyPhase": "playing",
+    "progressKeys": {
+      "game_progress": "{\"version\":1,\"current\":{\"manifestUrl\":\"\",\"chapterId\":\"dispatch-chapter-1\",\"countyName\":\"default\",\"chapterLength\":7,\"currentLevel\":2,\"startedAt\":1780066445392,\"catalogIndex\":0,\"levelSeed\":42002},\"completed\":[],\"lastPlayedAt\":1780066449229}",
+      "game_has_played": "true",
+      "game_block_state": "{\"positions\":{\"block_orange\":{\"col\":0,\"row\":5},\"block_pink\":{\"col\":0,\"row\":0}},\"exitedIds\":[],\"moveCount\":0}"
+    },
+    "analyticsCounts": {
+      "level_start": 1
+    },
+    "analyticsEventNames": [
+      "level_start"
+    ],
+    "canvasCount": 1
+  },
+  "staleEmitted": [],
+  "consoleErrors": [],
+  "requestFailures": [],
+  "screenshotPath": "C:\\Users\\Felip\\Projects\\wolf-games\\dispatch\\daily-dispatch-amino\\pipeline\\runs\\run-08-2026-05-29-t12-progress-services-analytics\\runtime-gate-progress-reload.png"
+}

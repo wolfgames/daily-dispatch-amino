@@ -140,6 +140,9 @@ export const audioSettingChangedSchema = type({
 export const gameStartSchema = type({
   start_source: "string",
   is_returning_player: "boolean",
+  chapter_id: "string",
+  chapter_count: "number",
+  county_theme: "string",
 });
 
 /**
@@ -148,8 +151,15 @@ export const gameStartSchema = type({
  */
 export const levelStartSchema = type({
   level_id: "string",
-  "level_order?": "number",
-  "is_replay?": "boolean",
+  chapter_id: "string",
+  chapter_count: "number",
+  county_theme: "string",
+  level_order: "number",
+  chapter_progress: "string",
+  level_difficulty: "'easy' | 'medium' | 'hard'",
+  is_tutorial: "boolean",
+  level_seed: "number",
+  grid_size: "number",
 });
 
 /**
@@ -157,10 +167,10 @@ export const levelStartSchema = type({
  * Fires when a level is finished successfully.
  */
 export const levelCompleteSchema = type({
-  level_id: "string",
-  "level_order?": "number",
-  time_to_complete: "number",
-  "score?": "number",
+  moves_used: "number",
+  optimal_moves: "number",
+  time_spent: "number",
+  total_rotations: "number",
 });
 
 /**
@@ -190,7 +200,12 @@ export const levelRestartSchema = type({
  */
 export const chapterStartSchema = type({
   chapter_id: "string",
-  "chapter_order?": "number",
+  chapter_count: "number",
+  county_theme: "string",
+  is_tutorial: "boolean",
+  chapter_size: "number",
+  story_id: "string",
+  story_headline: "string",
 });
 
 /**
@@ -199,7 +214,6 @@ export const chapterStartSchema = type({
  */
 export const chapterCompleteSchema = type({
   chapter_id: "string",
-  "chapter_order?": "number",
-  levels_completed: "number",
-  time_to_complete: "number",
+  time_spent: "number",
+  is_tutorial: "boolean",
 });

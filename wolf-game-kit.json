@@ -1,7 +1,4 @@
 {
-  "$comment": "Keep in sync with src/game/config.ts (single source of truth). Read by: scaffold/lib/gameKit.ts",
-  "projectId": "mygame",
-  "gameSlug": "mygame",
-  "gameName": "My Game",
-  "environment": "QA"
+  "projectId": "daily-dispatch-amino_87200baa-f5f8-4f24-a2cb-38a30ead4bc3",
+  "environment": "Development"
 }

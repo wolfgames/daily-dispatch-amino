@@ -6,10 +6,10 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 
 const ROOT = path.resolve(import.meta.dirname, "../../..");
-const SYNC_SCRIPT = path.join(ROOT, "scripts/scaffold-sync.ts");
-const RELEASE_SCRIPT = path.join(ROOT, "scripts/scaffold-release.ts");
-const ROLLBACK_SCRIPT = path.join(ROOT, "scripts/scaffold-rollback.ts");
-const DRIFT_SCRIPT = path.join(ROOT, "scripts/scaffold-drift.ts");
+const SYNC_SCRIPT = path.join(ROOT, "scripts/amino-sync.ts");
+const RELEASE_SCRIPT = path.join(ROOT, "scripts/amino-release.ts");
+const ROLLBACK_SCRIPT = path.join(ROOT, "scripts/amino-rollback.ts");
+const DRIFT_SCRIPT = path.join(ROOT, "scripts/amino-drift.ts");
 
 let scaffoldDir: string;
 let gameDir: string;
@@ -42,6 +42,7 @@ describe("scaffold e2e workflow", () => {
     // Set up scaffold repo
     mkdirSync(scaffoldDir, { recursive: true });
     runIn(scaffoldDir, "git init");
+    runIn(scaffoldDir, "git branch -M main");
     runIn(scaffoldDir, 'git config user.email "test@test.com"');
     runIn(scaffoldDir, 'git config user.name "Test"');
 
@@ -54,7 +55,7 @@ describe("scaffold e2e workflow", () => {
     writeFileSync(path.join(scaffoldDir, "src/game/config.ts"), 'export const game = "scaffold";\n');
     writeFileSync(
       path.join(scaffoldDir, "package.json"),
-      JSON.stringify({ name: "scaffold", scaffold: { version: "1.0.0" } }, null, 2) + "\n",
+      JSON.stringify({ name: "amino", amino: { version: "1.0.0" } }, null, 2) + "\n",
     );
     writeFileSync(path.join(scaffoldDir, "vite.config.ts"), "export default {};\n");
     writeFileSync(path.join(scaffoldDir, "tsconfig.json"), "{}\n");
@@ -62,10 +63,10 @@ describe("scaffold e2e workflow", () => {
     writeFileSync(path.join(scaffoldDir, "biome.json"), "{}\n");
     writeFileSync(path.join(scaffoldDir, ".gitattributes"), "src/game/** merge=ours\n");
 
-    runIn(scaffoldDir, "git add -A && git commit -m 'initial scaffold v1.0.0'");
+    runIn(scaffoldDir, 'git add -A && git commit -m "initial scaffold v1.0.0"');
 
     // Tag initial release
-    runIn(scaffoldDir, 'git tag -a scaffold-v1.0.0 -m "Scaffold release v1.0.0"');
+    runIn(scaffoldDir, 'git tag -a amino-v1.0.0 -m "Amino release v1.0.0"');
 
     // Clone to create game repo
     runIn(base, `git clone ${scaffoldDir} game`);
@@ -76,10 +77,10 @@ describe("scaffold e2e workflow", () => {
     writeFileSync(path.join(gameDir, "src/game/config.ts"), 'export const game = "my-game";\n');
     writeFileSync(
       path.join(gameDir, "package.json"),
-      JSON.stringify({ name: "my-game", scaffold: { version: "1.0.0" } }, null, 2) + "\n",
+      JSON.stringify({ name: "my-game", amino: { version: "1.0.0" } }, null, 2) + "\n",
     );
-    runIn(gameDir, "git add -A && git commit -m 'customize game'");
-    runIn(gameDir, "git remote rename origin scaffold");
+    runIn(gameDir, 'git add -A && git commit -m "customize game"');
+    runIn(gameDir, "git remote rename origin amino");
   });
 
   afterEach(() => {
@@ -89,18 +90,18 @@ describe("scaffold e2e workflow", () => {
   it("release: bumps version, creates tag, generates changelog", () => {
     // Make a change in scaffold
     writeFileSync(path.join(scaffoldDir, "src/core/index.ts"), 'export const version = "1.1.0";\n');
-    runIn(scaffoldDir, "git add -A && git commit -m 'feat: update core'");
+    runIn(scaffoldDir, 'git add -A && git commit -m "feat: update core"');
 
     // Run release
     runIn(scaffoldDir, `bun run ${RELEASE_SCRIPT} minor`);
 
     // Verify version bump
     const pkg = readPkg(scaffoldDir);
-    expect(pkg.scaffold.version).toBe("1.1.0");
+    expect(pkg.amino.version).toBe("1.1.0");
 
     // Verify tag
-    const tags = runIn(scaffoldDir, "git tag -l 'scaffold-v*'");
-    expect(tags).toContain("scaffold-v1.1.0");
+    const tags = runIn(scaffoldDir, 'git tag -l "amino-v*"');
+    expect(tags).toContain("amino-v1.1.0");
 
     // Verify changelog
     const changelog = readFileSync(path.join(scaffoldDir, "CHANGELOG.md"), "utf-8");
@@ -111,7 +112,7 @@ describe("scaffold e2e workflow", () => {
   it("sync: pulls scaffold update into game, preserves game files", () => {
     // Update scaffold
     writeFileSync(path.join(scaffoldDir, "src/core/index.ts"), 'export const version = "updated";\n');
-    runIn(scaffoldDir, "git add -A && git commit -m 'update core'");
+    runIn(scaffoldDir, 'git add -A && git commit -m "update core"');
 
     // Sync game
     runIn(gameDir, `bun run ${SYNC_SCRIPT}`);
@@ -126,14 +127,14 @@ describe("scaffold e2e workflow", () => {
 
     // Metadata updated
     const pkg = readPkg(gameDir);
-    expect(pkg.scaffold.syncedAt).toBeTruthy();
-    expect(pkg.scaffold.syncedFrom).toBeTruthy();
+    expect(pkg.amino.syncedAt).toBeTruthy();
+    expect(pkg.amino.syncedFrom).toBeTruthy();
   });
 
   it("rollback: reverts a sync commit", () => {
     // Update scaffold and sync
     writeFileSync(path.join(scaffoldDir, "src/core/index.ts"), 'export const version = "new";\n');
-    runIn(scaffoldDir, "git add -A && git commit -m 'update'");
+    runIn(scaffoldDir, 'git add -A && git commit -m "update"');
     runIn(gameDir, `bun run ${SYNC_SCRIPT}`);
 
     // Verify sync happened
@@ -154,7 +155,7 @@ describe("scaffold e2e workflow", () => {
       runIn(gameDir, `bun run ${ROLLBACK_SCRIPT}`);
     } catch (e: any) {
       threw = true;
-      expect((e.stderr || "") + (e.stdout || "")).toContain("not a scaffold sync");
+      expect((e.stderr || "") + (e.stdout || "")).toContain("not an amino sync");
     }
     expect(threw).toBe(true);
   });
@@ -167,7 +168,7 @@ describe("scaffold e2e workflow", () => {
   it("drift: detects local modifications to scaffold paths", () => {
     // Modify a scaffold-owned file locally
     writeFileSync(path.join(gameDir, "src/core/index.ts"), 'export const version = "hacked";\n');
-    runIn(gameDir, "git add -A && git commit -m 'local hack'");
+    runIn(gameDir, 'git add -A && git commit -m "local hack"');
 
     let threw = false;
     try {
@@ -182,17 +183,17 @@ describe("scaffold e2e workflow", () => {
   it("full workflow: release → sync → verify drift clean", () => {
     // 1. Make scaffold change
     writeFileSync(path.join(scaffoldDir, "src/core/index.ts"), 'export const version = "1.1.0";\n');
-    runIn(scaffoldDir, "git add -A && git commit -m 'feat: new core feature'");
+    runIn(scaffoldDir, 'git add -A && git commit -m "feat: new core feature"');
 
     // 2. Release
     runIn(scaffoldDir, `bun run ${RELEASE_SCRIPT} minor`);
     const scaffoldPkg = readPkg(scaffoldDir);
-    expect(scaffoldPkg.scaffold.version).toBe("1.1.0");
+    expect(scaffoldPkg.amino.version).toBe("1.1.0");
 
     // 3. Sync game
     runIn(gameDir, `bun run ${SYNC_SCRIPT}`);
     const gamePkg = readPkg(gameDir);
-    expect(gamePkg.scaffold.version).toBe("1.1.0");
+    expect(gamePkg.amino.version).toBe("1.1.0");
 
     // 4. Verify no drift after sync
     const driftOutput = runIn(gameDir, `bun run ${DRIFT_SCRIPT}`);
@@ -204,6 +205,6 @@ describe("scaffold e2e workflow", () => {
 
     // 6. Commit history is clean
     const syncMsg = latestCommitMsg(gameDir);
-    expect(syncMsg).toMatch(/^chore: sync scaffold to/);
+    expect(syncMsg).toMatch(/^chore: sync amino to/);
   });
 });

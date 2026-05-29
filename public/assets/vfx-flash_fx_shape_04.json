@@ -1,0 +1,292 @@
+{
+  "frames": {
+    "vfx-flash_fx_shape_04_0000": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-flash_fx_shape_04_0001": {
+      "frame": {
+        "x": 256,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-flash_fx_shape_04_0002": {
+      "frame": {
+        "x": 512,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-flash_fx_shape_04_0003": {
+      "frame": {
+        "x": 768,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-flash_fx_shape_04_0004": {
+      "frame": {
+        "x": 0,
+        "y": 144,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-flash_fx_shape_04_0005": {
+      "frame": {
+        "x": 256,
+        "y": 144,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-flash_fx_shape_04_0006": {
+      "frame": {
+        "x": 512,
+        "y": 144,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-flash_fx_shape_04_0007": {
+      "frame": {
+        "x": 768,
+        "y": 144,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-flash_fx_shape_04_0008": {
+      "frame": {
+        "x": 0,
+        "y": 288,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-flash_fx_shape_04_0009": {
+      "frame": {
+        "x": 256,
+        "y": 288,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-flash_fx_shape_04_0010": {
+      "frame": {
+        "x": 512,
+        "y": 288,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-flash_fx_shape_04_0011": {
+      "frame": {
+        "x": 768,
+        "y": 288,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    },
+    "vfx-flash_fx_shape_04_0012": {
+      "frame": {
+        "x": 0,
+        "y": 432,
+        "w": 256,
+        "h": 144
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 144
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 144
+      }
+    }
+  },
+  "animations": {
+    "flash": [
+      "vfx-flash_fx_shape_04_0000",
+      "vfx-flash_fx_shape_04_0001",
+      "vfx-flash_fx_shape_04_0002",
+      "vfx-flash_fx_shape_04_0003",
+      "vfx-flash_fx_shape_04_0004",
+      "vfx-flash_fx_shape_04_0005",
+      "vfx-flash_fx_shape_04_0006",
+      "vfx-flash_fx_shape_04_0007",
+      "vfx-flash_fx_shape_04_0008",
+      "vfx-flash_fx_shape_04_0009",
+      "vfx-flash_fx_shape_04_0010",
+      "vfx-flash_fx_shape_04_0011",
+      "vfx-flash_fx_shape_04_0012"
+    ]
+  },
+  "meta": {
+    "app": "https://pixijs.com",
+    "version": "1.0",
+    "image": "vfx-flash_fx_shape_04.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1024,
+      "h": 576
+    },
+    "scale": "1"
+  }
+}

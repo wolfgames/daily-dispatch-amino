@@ -12,43 +12,56 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 vi.mock('@wolfgames/components/core', () => {
-  const createAssetFacade = vi.fn(({ loaders }: { loaders?: Record<string, unknown> }) => {
+  const createSignal = (initial: unknown) => {
+    let value = initial;
+    const subscribers = new Set<(value: unknown) => void>();
+    return {
+      get: vi.fn(() => value),
+      set: vi.fn((next: unknown) => {
+        value = next;
+        for (const subscriber of subscribers) subscriber(value);
+      }),
+      subscribe: vi.fn((subscriber: (value: unknown) => void) => {
+        subscribers.add(subscriber);
+        return () => subscribers.delete(subscriber);
+      }),
+    };
+  };
+  const createDomLoader = vi.fn(() => ({
+    init: vi.fn(),
+    loadBundle: vi.fn(async () => {}),
+    getSpritesheet: vi.fn(() => null),
+    unloadBundle: vi.fn(),
+    dispose: vi.fn(),
+  }));
+  const createAssetCoordinator = vi.fn(({ loaders }: { loaders?: Record<string, unknown> }) => {
     const loaded: string[] = [];
+    const loaderMap = new Map(Object.entries(loaders ?? {}));
+    const loadingState = createSignal({ loading: [], loaded, errors: {}, bundleProgress: {}, progress: 0, backgroundLoading: [], unloaded: [] });
     return {
       loadBundle: vi.fn(async (name: string) => { loaded.push(name); }),
-      loadBundles: vi.fn(async (names: string[]) => { loaded.push(...names); }),
-      backgroundLoadBundle: vi.fn(async () => {}),
-      preloadScene: vi.fn(async () => {}),
-      loadBoot: vi.fn(async () => {}),
-      loadCore: vi.fn(async () => {}),
-      loadTheme: vi.fn(async () => {}),
-      loadAudio: vi.fn(async () => {}),
-      loadScene: vi.fn(async () => {}),
-      initGpu: vi.fn(async () => {}),
-      getLoadedBundles: vi.fn(() => loaded),
       isLoaded: vi.fn((name: string) => loaded.includes(name)),
-      unloadBundle: vi.fn(),
+      initLoader: vi.fn((type: string, loader: unknown) => {
+        loaderMap.set(type, loader);
+      }),
+      getLoader: vi.fn((type: string) => loaderMap.get(type) ?? null),
+      unloadBundle: vi.fn((name: string) => {
+        const index = loaded.indexOf(name);
+        if (index >= 0) loaded.splice(index, 1);
+      }),
       unloadBundles: vi.fn(),
-      unloadScene: vi.fn(),
-      startBackgroundLoading: vi.fn(async () => {}),
-      loadingState: vi.fn(() => ({ loading: [], loaded, errors: {}, bundleProgress: {}, progress: 0, backgroundLoading: [], unloaded: [] })),
-      loadingStateSignal: { get: vi.fn(), set: vi.fn(), subscribe: vi.fn(() => () => {}) },
-      dom: {
-        getFrameURL: vi.fn(async () => 'blob:mock'),
-        get: vi.fn(() => null),
-        getImage: vi.fn(() => null),
-        getSheet: vi.fn(() => null),
-        getSpritesheet: vi.fn(() => null),
-      },
-      getLoader: vi.fn(() => null),
+      loadingState,
       dispose: vi.fn(),
-      coordinator: {},
       _loaders: loaders,
     };
   });
 
   return {
-    createAssetFacade,
+    createAssetCoordinator,
+    createDomLoader,
+    createSignal,
+    KIND_TO_PREFIX: { boot: 'boot-', core: 'core-', theme: 'theme-', audio: 'audio-', scene: 'scene-', fx: 'fx-', data: 'data-' },
+    KIND_TO_LOADER: { boot: 'dom', core: 'gpu', theme: 'dom', audio: 'audio', scene: 'gpu', fx: 'gpu', data: 'dom' },
     validateManifest: vi.fn(() => ({ valid: true, errors: [] })),
   };
 });
@@ -60,6 +73,7 @@ vi.mock('@wolfgames/components/howler', () => {
     loadBundle: vi.fn(async () => {}),
     get: vi.fn((alias: string) => alias === 'sfx' ? mockHowl : null),
     has: vi.fn(() => false),
+    stop: vi.fn(),
     setVolume: vi.fn(),
     getVolume: vi.fn(() => 1),
     unlock: vi.fn(async () => {}),
